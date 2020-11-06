@@ -1,0 +1,652 @@
+SyncTeX Version:1
+Input:1:C:\Users\perla\OneDrive\Desktop\Piezo Article\Figures piezo\graphe11'.tex
+Input:2:C:\Program Files\MiKTeX\tex\latex\standalone\standalone.cls
+Input:3:C:\Program Files\MiKTeX\tex\latex\tools\shellesc.sty
+Input:4:C:\Program Files\MiKTeX\tex\generic\iftex\ifluatex.sty
+Input:5:C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
+Input:6:C:\Program Files\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+Input:7:C:\Program Files\MiKTeX\tex\generic\xkeyval\xkeyval.tex
+Input:8:C:\Program Files\MiKTeX\tex\generic\xkeyval\xkvutils.tex
+Input:9:C:\Program Files\MiKTeX\tex\generic\xkeyval\keyval.tex
+Input:10:C:\Program Files\MiKTeX\tex\latex\standalone\standalone.cfg
+Input:11:C:\Program Files\MiKTeX\tex\latex\base\article.cls
+Input:12:C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+Input:13:C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+Input:14:C:\Program Files\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+Input:15:C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+Input:16:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+Input:17:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfutil-common-lists.tex
+Input:18:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+Input:19:C:\Program Files\MiKTeX\tex\latex\ms\everyshi.sty
+Input:20:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+Input:21:C:\Program Files\MiKTeX\tex\generic\pgf\pgf.revision.tex
+Input:22:C:\Program Files\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+Input:23:C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty
+Input:24:C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty
+Input:25:C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty
+Input:26:C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+Input:27:C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
+Input:28:C:\Program Files\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+Input:29:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+Input:30:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+Input:31:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+Input:32:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+Input:33:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+Input:34:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+Input:35:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+Input:36:C:\Program Files\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+Input:37:C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
+Input:38:C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+Input:39:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+Input:40:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+Input:41:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+Input:42:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+Input:43:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+Input:44:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+Input:45:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+Input:46:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+Input:47:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+Input:48:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+Input:49:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+Input:50:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+Input:51:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+Input:52:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+Input:53:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+Input:54:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+Input:55:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+Input:56:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+Input:57:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+Input:58:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+Input:59:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+Input:60:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+Input:61:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+Input:62:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+Input:63:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+Input:64:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+Input:65:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+Input:66:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+Input:67:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+Input:68:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+Input:69:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+Input:70:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+Input:71:C:\Program Files\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+Input:72:C:\Program Files\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+Input:73:C:\Program Files\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+Input:74:C:\Program Files\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+Input:75:C:\Program Files\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+Input:76:C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+Input:77:C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+Input:78:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+Input:79:C:\Program Files\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+Input:80:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+Input:81:C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+Input:82:C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+Input:83:C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+Input:84:C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+Input:85:C:\Program Files\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+Input:86:C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+Input:87:C:\Program Files\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Input:88:C:\Program Files\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Input:89:C:\Program Files\MiKTeX\tex\latex\doublestroke\dsfont.sty
+Input:90:C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+Input:91:C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+Input:92:C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdfmode.def
+Input:93:C:\Users\perla\OneDrive\Desktop\Piezo Article\Figures piezo\graphe11'.aux
+Input:94:C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+Input:95:C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+Input:96:C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+Input:97:C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+Input:98:C:\Program Files\MiKTeX\tex\latex\doublestroke\udsrom.fd
+Output:pdf
+Magnification:1000
+Unit:1
+X Offset:0
+Y Offset:0
+Content:
+!7562
+{1
+[1,32:-1,9078748:22609920,9078749,0
+(1,32:-1,4736286:0,0,0
+g1,32:4736286,4736286
+g1,32:-1,4736286
+)
+[1,32:-1,9078748:22609920,9078749,0
+[1,32:-1,-1:22609920,0,0
+(1,32:-1,-1:22609920,0,0
+h1,32:-1,-1:22609920,0,0
+)
+]
+[1,32:-1,9078748:10992315,9078749,0
+(1,32:-1,9078748:10992315,9078749,0
+(1,32:-1,9078748:10992315,9078749,0
+g1,32:-1,9078748
+(1,32:-1,9078748:10992315,9078749,0
+(1,32:-1,9078748:10992315,9078749,0
+g1,32:7455042,9078748
+(1,32:7455042,578550:0,0,0
+(1,32:7455042,578550:0,0,0
+g1,21:7455042,578550
+g1,22:7455042,578550
+(1,22:7455042,578550:0,0,0
+(1,22:7455042,578550:0,0,0
+g1,22:7455042,578550
+g1,22:7455042,578550
+g1,22:7455042,578550
+g1,22:7455042,578550
+g1,22:7455042,578550
+(1,22:7455042,578550:0,0,0
+g1,22:4911501,578550
+(1,22:4911501,774831:0,0,0
+(1,22:4911501,774831:0,0,0
+(1,22:4911501,774831:5087083,556402,163840
+(1,22:4911501,774831:5087083,556402,163840
+$1,22:4911501,774831
+x1,22:5566862,774831
+[1,22:5566862,937498:617969,719069,0
+(1,22:5566862,537006:339591,318577,0
+x1,22:5873685,537006
+)
+(1,22:5566862,937498:617969,295640,0
+x1,22:6152063,937498
+)
+]
+x1,22:6366876,774831
+g1,22:6512508,774831
+x1,22:7022234,774831
+g1,22:7167866,774831
+x1,22:7786819,774831
+(1,22:7786819,873134:497819,197518,0
+x1,22:8251870,873134
+)
+g1,22:8430270,774831
+x1,22:8939996,774831
+g1,22:9085628,774831
+x1,22:9522536,774831
+[1,22:9522536,937498:294003,598010,0
+(1,22:9522536,537006:266977,197518,0
+x1,22:9756745,537006
+)
+(1,22:9522536,937498:294003,295640,0
+x1,22:9783771,937498
+)
+]
+x1,22:9998584,774831
+$1,22:9998584,774831
+)
+g1,22:9998584,774831
+)
+)
+g1,22:4911501,774831
+)
+g1,22:4911501,578550
+)
+g1,22:7455042,578550
+g1,22:7455042,578550
+)
+)
+g1,22:7455042,578550
+g1,24:7455042,578550
+(1,24:7455042,578550:0,0,0
+(1,24:7455042,578550:0,0,0
+g1,24:7455042,578550
+g1,24:7455042,578550
+g1,24:7455042,578550
+g1,24:7455042,578550
+g1,24:7455042,578550
+(1,24:7455042,578550:0,0,0
+g1,24:5217420,578550
+(1,24:5217420,4307921:0,0,0
+(1,24:5217420,4307921:0,0,0
+(1,24:5217420,4307921:0,0,0
+h1,24:5217420,4307921:0,0,0
+g1,24:5217420,4307921
+)
+)
+g1,24:5217420,4307921
+)
+g1,24:5217420,578550
+)
+g1,24:7455042,578550
+g1,24:7455042,578550
+)
+)
+g1,24:7455042,578550
+g1,25:7455042,578550
+(1,25:7455042,578550:0,0,0
+(1,25:7455042,578550:0,0,0
+g1,25:7455042,578550
+g1,25:7455042,578550
+g1,25:7455042,578550
+g1,25:7455042,578550
+g1,25:7455042,578550
+(1,25:7455042,578550:0,0,0
+g1,25:8611444,578550
+(1,25:8611444,4471761:0,0,0
+(1,25:8611444,4471761:0,0,0
+(1,25:8611444,4471761:2162441,491520,163840
+(1,25:8611444,4471761:2162441,491520,163840
+$1,25:8611444,4471761
+x1,25:9558077,4471761
+g1,25:9667301,4471761
+x1,25:10286254,4471761
+(1,25:10286254,4570064:305586,318577,0
+x1,25:10559072,4570064
+)
+x1,25:10773885,4471761
+$1,25:10773885,4471761
+)
+g1,25:10773885,4471761
+)
+)
+g1,25:8611444,4471761
+)
+g1,25:8611444,578550
+)
+g1,25:7455042,578550
+g1,25:7455042,578550
+)
+)
+g1,25:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+(1,26:7455042,578550:0,0,0
+(1,26:7455042,578550:0,0,0
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+g1,26:7455042,578550
+(1,26:7455042,578550:0,0,0
+g1,26:5347403,578550
+(1,26:5347403,2736269:0,0,0
+(1,26:5347403,2736269:0,0,0
+(1,26:5347403,2736269:1761608,225735,0
+(1,26:5347403,2736269:1761608,225735,0
+$1,26:5347403,2736269
+x1,26:5840143,2736269
+$1,26:5840143,2736269
+g1,26:6025831,2736269
+x1,26:6567421,2736269
+x1,26:7109011,2736269
+)
+g1,26:7109011,2736269
+)
+)
+g1,26:5347403,2736269
+)
+g1,26:5347403,578550
+)
+g1,26:7455042,578550
+g1,26:7455042,578550
+)
+)
+g1,26:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+(1,27:7455042,578550:0,0,0
+(1,27:7455042,578550:0,0,0
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+g1,27:7455042,578550
+(1,27:7455042,578550:0,0,0
+g1,27:7787963,578550
+(1,27:7787963,2641597:0,0,0
+(1,27:7787963,2641597:0,0,0
+(1,27:7787963,2641597:1591394,364089,0
+(1,27:7787963,2641597:1591394,364089,0
+$1,27:7787963,2641597
+x1,27:8280703,2641597
+$1,27:8280703,2641597
+g1,27:8466391,2641597
+x1,27:8744923,2641597
+x1,27:9379357,2641597
+)
+g1,27:9379357,2641597
+)
+)
+g1,27:7787963,2641597
+)
+g1,27:7787963,578550
+)
+g1,27:7455042,578550
+g1,27:7455042,578550
+)
+)
+g1,27:7455042,578550
+g1,28:7455042,578550
+(1,28:7455042,578550:0,0,0
+(1,28:7455042,578550:0,0,0
+g1,28:7455042,578550
+g1,28:7455042,578550
+g1,28:7455042,578550
+g1,28:7455042,578550
+g1,28:7455042,578550
+(1,28:7455042,578550:0,0,0
+g1,28:218429,578550
+(1,28:218429,8201135:0,0,0
+(1,28:218429,8201135:0,0,0
+(1,28:218429,8201135:4030987,979946,652265
+(1,28:218429,8201135:4030987,979946,652265
+(1,28:218429,8201135:4030987,979946,652265
+$1,28:218429,8201135
+[1,28:218429,8201135:4030987,979946,652265
+(1,28:218429,7771689:4030987,550500,235932
+g1,28:218429,7771689
+(1,28:218429,7771689:4030987,550500,235932
+r1,32:218429,7771689:0,786432,235932
+g1,28:611645,7771689
+g1,28:611646,7771689
+$1,28:611646,7771689
+x1,28:1558279,7771689
+g1,28:1667503,7771689
+x1,28:2286456,7771689
+(1,28:2286456,7869992:305586,318577,0
+x1,28:2559274,7869992
+)
+x1,28:2774087,7771689
+$1,28:2774087,7771689
+k1,28:3856200,7771689:1082113
+g1,28:4249416,7771689
+)
+g1,28:4249416,7771689
+)
+(1,28:218429,8617468:4030987,609847,235932
+g1,28:218429,8617468
+(1,28:218429,8617468:4030987,609847,235932
+r1,32:218429,8617468:0,786432,235932
+g1,28:611645,8617468
+g1,28:611646,8617468
+$1,28:611646,8617468
+x1,28:1230599,8617468
+[1,28:1230599,8792226:470844,784605,0
+(1,28:1230599,8326198:470844,318577,65536
+x1,28:1461067,8326198
+(1,28:1461067,8391734:207608,218388,0
+x1,28:1635907,8391734
+)
+)
+(1,28:1230599,8792226:294003,295640,0
+x1,28:1491834,8792226
+)
+]
+x1,28:2065533,8617468
+g1,28:2174757,8617468
+x1,28:2793710,8617468
+[1,28:2793710,8792226:880445,784605,0
+(1,28:2793710,8326198:880445,318577,65536
+x1,28:3024178,8326198
+(1,28:3024178,8391734:207608,218388,0
+x1,28:3199018,8391734
+)
+x1,28:3641387,8326198
+)
+(1,28:2793710,8792226:294003,295640,0
+x1,28:3054945,8792226
+)
+]
+x1,28:3856200,8617468
+$1,28:3856200,8617468
+g1,28:3856200,8617468
+g1,28:4249416,8617468
+)
+g1,28:4249416,8617468
+)
+]
+$1,28:4249416,8201135
+)
+)
+g1,28:4249416,8201135
+)
+)
+g1,28:218429,8201135
+)
+g1,28:218429,578550
+)
+g1,28:7455042,578550
+g1,28:7455042,578550
+)
+)
+g1,28:7455042,578550
+g1,29:7455042,578550
+(1,29:7455042,578550:0,0,0
+(1,29:7455042,578550:0,0,0
+g1,29:7455042,578550
+g1,29:7455042,578550
+g1,29:7455042,578550
+g1,29:7455042,578550
+g1,29:7455042,578550
+(1,29:7455042,578550:0,0,0
+g1,29:6185423,578550
+(1,29:6185423,8201134:0,0,0
+(1,29:6185423,8201134:0,0,0
+(1,29:6185423,8201134:4030987,986865,659184
+(1,29:6185423,8201134:4030987,986865,659184
+(1,29:6185423,8201134:4030987,986865,659184
+$1,29:6185423,8201134
+[1,29:6185423,8201134:4030987,986865,659184
+(1,29:6185423,7778607:4030987,564338,235932
+g1,29:6185423,7778607
+(1,29:6185423,7778607:4030987,564338,235932
+r1,32:6185423,7778607:0,786432,235932
+g1,29:6578639,7778607
+g1,29:6578640,7778607
+$1,29:6578640,7778607
+x1,29:7525273,7778607
+g1,29:7634497,7778607
+x1,29:8253450,7778607
+[1,29:8253450,7976302:566821,762033,0
+(1,29:8253450,7498259:442369,283990,54614
+x1,29:8663051,7498259
+)
+(1,29:8253450,7976302:566821,318577,0
+x1,29:8787503,7976302
+)
+]
+x1,29:9002316,7778607
+$1,29:9002316,7778607
+k1,29:9823194,7778607:820878
+g1,29:10216410,7778607
+)
+g1,29:10216410,7778607
+)
+(1,29:6185423,8624386:4030987,609847,235932
+g1,29:6185423,8624386
+(1,29:6185423,8624386:4030987,609847,235932
+r1,32:6185423,8624386:0,786432,235932
+g1,29:6578639,8624386
+g1,29:6578640,8624386
+$1,29:6578640,8624386
+x1,29:7197593,8624386
+[1,29:7197593,8799144:470844,784605,0
+(1,29:7197593,8333116:470844,318577,65536
+x1,29:7428061,8333116
+(1,29:7428061,8398652:207608,218388,0
+x1,29:7602901,8398652
+)
+)
+(1,29:7197593,8799144:294003,295640,0
+x1,29:7458828,8799144
+)
+]
+x1,29:8032527,8624386
+g1,29:8141751,8624386
+x1,29:8760704,8624386
+[1,29:8760704,8799144:880445,784605,0
+(1,29:8760704,8333116:880445,318577,65536
+x1,29:8991172,8333116
+(1,29:8991172,8398652:207608,218388,0
+x1,29:9166012,8398652
+)
+x1,29:9608381,8333116
+)
+(1,29:8760704,8799144:294003,295640,0
+x1,29:9021939,8799144
+)
+]
+x1,29:9823194,8624386
+$1,29:9823194,8624386
+g1,29:9823194,8624386
+g1,29:10216410,8624386
+)
+g1,29:10216410,8624386
+)
+]
+$1,29:10216410,8201134
+)
+)
+g1,29:10216410,8201134
+)
+)
+g1,29:6185423,8201134
+)
+g1,29:6185423,578550
+)
+g1,29:7455042,578550
+g1,29:7455042,578550
+)
+)
+g1,29:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+(1,30:7455042,578550:0,0,0
+(1,30:7455042,578550:0,0,0
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+g1,30:7455042,578550
+(1,30:7455042,578550:0,0,0
+g1,30:3208665,578550
+(1,30:3208665,5853846:0,0,0
+(1,30:3208665,5853846:0,0,0
+(1,30:3208665,5853846:1686018,383646,205608
+(1,30:3208665,5853846:1686018,383646,205608
+$1,30:3208665,5853846
+(1,30:3208665,5853846:587364,383646,205608
+(1,30:3208665,5853846:587364,383646,205608
+h1,30:3208665,5853846:78643,0,0
+[1,30:3287308,5853846:430078,383646,205608
+(1,30:3287308,5639500:430078,169300,0
+x1,30:3717386,5639500
+)
+(1,30:3287308,6059453:430078,273067,0
+k1,30:3376032,6059453:88724
+x1,30:3628663,6059453
+k1,30:3717386,6059453:88723
+)
+]
+h1,30:3717386,5853846:78643,0,0
+)
+)
+$1,30:3796029,5853846
+g1,30:3981717,5853846
+x1,30:4260249,5853846
+x1,30:4894683,5853846
+)
+g1,30:4894683,5853846
+)
+)
+g1,30:3208665,5853846
+)
+g1,30:3208665,578550
+)
+g1,30:7455042,578550
+g1,30:7455042,578550
+)
+)
+g1,30:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+(1,31:7455042,578550:0,0,0
+(1,31:7455042,578550:0,0,0
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+g1,31:7455042,578550
+(1,31:7455042,578550:0,0,0
+g1,31:5451996,578550
+(1,31:5451996,5850386:0,0,0
+(1,31:5451996,5850386:0,0,0
+(1,31:5451996,5850386:1856232,383646,205608
+(1,31:5451996,5850386:1856232,383646,205608
+$1,31:5451996,5850386
+(1,31:5451996,5850386:587364,383646,205608
+(1,31:5451996,5850386:587364,383646,205608
+h1,31:5451996,5850386:78643,0,0
+[1,31:5530639,5850386:430078,383646,205608
+(1,31:5530639,5636040:430078,169300,0
+x1,31:5960717,5636040
+)
+(1,31:5530639,6055993:430078,273067,0
+k1,31:5619363,6055993:88724
+x1,31:5871994,6055993
+k1,31:5960717,6055993:88723
+)
+]
+h1,31:5960717,5850386:78643,0,0
+)
+)
+$1,31:6039360,5850386
+g1,31:6225048,5850386
+x1,31:6766638,5850386
+x1,31:7308228,5850386
+)
+g1,31:7308228,5850386
+)
+)
+g1,31:5451996,5850386
+)
+g1,31:5451996,578550
+)
+g1,31:7455042,578550
+g1,31:7455042,578550
+)
+)
+g1,31:7455042,578550
+g1,32:7455042,578550
+g1,32:7455042,578550
+)
+g1,32:7455042,578550
+)
+)
+)
+g1,32:10992314,9078748
+)
+g1,32:10992314,9078748
+g1,32:10992314,9078748
+)
+]
+(1,32:-1,9078748:22609920,0,0
+h1,32:-1,9078748:22609920,0,0
+)
+]
+]
+!10934
+}1
+Input:99:C:\Users\perla\OneDrive\Desktop\Piezo Article\Figures piezo\graphe11'.aux
+!93
+Postamble:
+Count:481
+!25
+Post scriptum:

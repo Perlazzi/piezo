@@ -1,0 +1,13 @@
+\babel@toc {english}{}
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Piezoelectricity}}{1}{section.2}%
+\contentsline {section}{\tocsection {}{3}{Clips operation}}{2}{section.3}%
+\contentsline {section}{\tocsection {}{4}{Main result}}{3}{section.4}%
+\contentsline {section}{\tocsection {}{5}{Clips between type II and III $\mathrm {O}(3)$-subgroups}}{5}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Clips with $\mathbb {Z}_{2n}^-$}}{7}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Clips with $\mathbb {D}_{n}^v$}}{10}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Clips with $\mathbb {D}_{2n}^h$}}{12}{subsection.5.3}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Clips with $\mathbb {O}^-$}}{16}{subsection.5.4}%
+\contentsline {section}{\tocsection {}{6}{symmetry classes of the piezoelectricity law}}{20}{section.6}%
+\contentsline {section}{\tocsection {Appendix}{A}{$\mathrm {O}(3)$-subgroups}}{21}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{22}{section*.3}%

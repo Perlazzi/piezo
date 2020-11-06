@@ -1,0 +1,1380 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{dsfont,amsfonts}
+\usepackage{url}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{url}
+\usepackage[left=25mm,top=25mm,bottom=25mm,right=25mm]{geometry}
+\usepackage[english]{babel} % English typography
+\usepackage[utf8]{inputenc} % can use keyboard characters for accented letters
+\usepackage{cmap}           % make the PDF file "searchable and copyable"
+\usepackage{hyperxmp}       % store XMP metadata in the PDF file
+\usepackage{enumerate}
+\usepackage{mleftright}
+\usepackage{eqnarray}
+\usepackage{fancybox}
+\usepackage[pdfdisplaydoctitle = true,
+      colorlinks = true,
+      urlcolor = blue,
+      citecolor = blue,
+      linkcolor = blue,
+      pdfstartview = FitH,
+      pdfpagemode = UseNone,
+      bookmarksnumbered = true,
+      unicode=true]{hyperref} % to make a pdf file with hyperlinks and bookmarks
+\usepackage{todonotes}
+
+% FIGURES --------------------------------------------------------
+\graphicspath{{figs/}}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exmp}[thm]{Example}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% MATH -----------------------------------------------------------
+% Number sets
+\newcommand{\CC}{\mathbb{C}}                % Complex numbers
+\newcommand{\RR}{\mathbb{R}}                % Real numbers
+\newcommand{\QQ}{\mathbb{Q}}                % Rational numbers
+\newcommand{\ZZ}{\mathbb{Z}}                % Relative integers
+\newcommand{\NN}{\mathbb{N}}                % Natural numbers
+
+% Spaces
+\newcommand{\Ela}{\mathbb{E}\mathrm{la}}    % Space of Elasticity tensors
+\newcommand{\Piez}{\mathbb{P}\mathrm{iez}}  % Space of piezoelectricity tensors
+\newcommand{\Sym}{\mathbb{S}}               % Space of permittivity tensors
+\newcommand{\HH}{\mathbb{H}}                % Space of harmonic tensors
+\newcommand{\TT}{\mathbb{T}}                % Space of tensors
+\newcommand{\J}{\mathcal{J}}                % set of isotropy classes
+
+\newcommand{\VV}{\mathbb{V}}                % vector space
+\newcommand{\WW}{\mathbb{W}}                % vector space
+
+\newcommand{\Sn}[1]{\mathrm{S}_{#1}}        % Space of binary forms
+\newcommand{\RSn}[1]{\Sn{#1}^{\RR}}         % Space of (real) binary forms
+\newcommand{\Hn}[1]{\mathcal{H}_{#1}}       % Harmonic polynomials
+\newcommand{\Pn}[1]{\mathcal{P}_{#1}}       % Homogeneous polynomials
+
+% Algebras
+\newcommand{\cov}{\mathbf{Cov}}
+\newcommand{\inv}{\mathbf{Inv}}
+\newcommand{\pol}{\mathrm{Pol}}
+
+% Groups
+\newcommand{\OO}{\mathrm{O}}                % Orthogonal group
+\newcommand{\SO}{\mathrm{SO}}               % Special orthogonal groups
+\newcommand{\octa}{\mathbb{O}}              % Cubic (octahedral) group
+\newcommand{\ico}{\mathbb{I}}               % Icosahedral group
+\newcommand{\tetra}{\mathbb{T}}             % tetrahedral group
+\newcommand{\DD}{\mathbb{D}}                % Dihedral group
+\newcommand{\1}{\mathds{1}}		            % trivial group
+\newcommand{\id}{\mathrm{I}}                % identity element
+
+% Vectors
+\newcommand{\ee}{\pmb{e}}                   % vector in R^{3}
+\newcommand{\nn}{\pmb{n}}                   % vector in R^{3}
+\newcommand{\uu}{\pmb{u}}                   % vector in R^{3}
+\newcommand{\vv}{\pmb{v}}                   % vector in R^{3}
+\newcommand{\ww}{\pmb{w}}                   % vector in R^{3}
+\newcommand{\xx}{\pmb{x}}                   % vector in R^{3}
+\newcommand{\yy}{\pmb{y}}                   % vector in R^{3}
+
+% Polynomial in 3 variables
+\newcommand{\qq}{\mathrm{q}}                % euclidean quadratic form
+\newcommand{\rp}{\mathrm{p}}                % polynomial in 3 variables
+\newcommand{\ra}{\mathrm{a}}                % polynomial in 3 variables
+\newcommand{\rb}{\mathrm{b}}                % polynomial in 3 variables
+\newcommand{\rd}{\mathrm{d}}                % polynomial in 3 variables
+\newcommand{\rh}{\mathrm{h}}                % harmonic polynomial in 3 variables
+\newcommand{\rk}{\mathrm{k}}                % harmonic polynomial in 3 variables
+\newcommand{\rt}{\mathrm{t}}
+
+% 2th order Tensors
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bq}{\mathbf{q}}                % Eucllidean metric tensor
+
+
+% Higher order Tensors
+\newcommand{\bE}{\mathbf{E}}                % Elasticity tensor
+\newcommand{\bH}{\mathbf{H}}                % harmonic tensor
+\newcommand{\bK}{\mathbf{K}}                % third-order symmetric tensor
+\newcommand{\bP}{\mathbf{P}}                % Piezoelectricity tensor
+\newcommand{\bsigma}{\mathbf{\sigma}}       % second order tensors
+\newcommand{\beps}{\mathbf{\varepsilon}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+
+% Operators
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sgn}
+
+% Functions
+\newcommand{\norm}[1]{\lVert#1\rVert}       % norm
+\newcommand{\abs}[1]{\lvert#1\rvert}        % modulus
+\newcommand{\set}[1]{\left\{#1\right\}}     % set
+
+% Todo notes -----------------------------------------------------------
+\newcommand{\todoMO}[1]{\todo[inline,color = yellow!40] {MO: #1}}
+\newcommand{\todoPA}[1]{\todo[inline,color = red!40] {PA: #1}}
+\newcommand{\todoBK}[1]{\todo[inline,color = blue!40] {BK: #1}}
+\newcommand{\todoRD}[1]{\todo[inline,color = violet!40]{RD: #1}}
+
+% PDF metadata (hyperref options)---------------------------------
+\hypersetup{
+  pdfauthor={}, % author
+  pdftitle={Symmetry classes of the complete Piezoelectricity law}, % title
+  pdfsubject={MSC 2020: xxx (xxx xxx)}, % subjet
+  pdfkeywords={}, % keywords
+  pdflang=en, % language : fr, en
+  }
+% ----------------------------------------------------------------
+\begin{document}
+
+\title{Symmetry classes of the complete Piezoelectricity law}%
+
+\author{P. Azzi}
+\address[Perla Azzi]{xxx, France}
+\email[Perla Azzi]{perlazzi72@gmail.com}
+
+\author{M. Olive}
+\address[Marc Olive]{Universit\'{e} Paris-Saclay, ENS Paris-Saclay, CNRS, LMT - Laboratoire de M\'{e}canique et Technologie, 94235, Cachan, France}
+\email{marc.olive@math.cnrs.fr}
+
+\author{B. Kolev}
+\address[Boris Kolev]{Universit\'{e} Paris-Saclay, ENS Paris-Saclay, CNRS, LMT - Laboratoire de M\'{e}canique et Technologie, 94235, Cachan, France}
+\email{boris.kolev@math.cnrs.fr}
+
+\author{R. Desmorat}
+\address[Rodrigue Desmorat]{Universit\'{e} Paris-Saclay, ENS Paris-Saclay, CNRS, LMT - Laboratoire de M\'{e}canique et Technologie, 94235, Cachan, France}
+\email{rodrigue.desmorat@ens-paris-saclay.fr}
+
+
+%\thanks{}%
+\subjclass[2020]{xxx, xxx (xxx, xxx)}%
+\keywords{}%
+
+\date{\today}%
+%\dedicatory{}%
+%\commby{}%
+% ----------------------------------------------------------------
+
+\begin{abstract}
+ The piezoelectricity law describes the electrical behavior of a material in response to applied mechanical stress. In its linear formulation, this law involves three vector spaces of constitutive tensors: the space of permittivity tensors $\Sym$, the space of piezoelectricity tensors $\Piez$ and the space of elasticity tensors $\Ela$. We already know the symmetry classes for the representation of $\OO(3)$ on each of the above three spaces separately.  In this paper, we will establish the symmetry classes for the coupled law using Clips operation.
+\end{abstract}
+
+\maketitle
+
+% --------------------------- Table of content ----------------
+
+\begin{scriptsize}
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+\end{scriptsize}
+
+% ----------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+\par Given a Lie group $G$ and a vector space $V$, we can define a linear map that permits to represent the elements of $G$ using linear applications in $GL(V)$. This representation of $G$ on $V$ permits to divide the elements of $V$ in classes, called symmetry classes, such that two elements of $V$ belong to the same class if their symmetry groups (consisting of the elements of $G$ that fix the element $v$ in question)  are conjugate.
+\par Finding the symmetry classes of a Lie group representation has been always an interesting problem. However, it is not always an easy task, all we know is that there exists a finite number of them (see \cite{Mostow1957}).
+\par For instance, for the $\SO(3)$ representation on the space of elasticity tensors $\Ela$, there exists eight symmetry classes found by Forte and Vianello in 1996 (see \cite{forte1996}). In other words, Forte and Vianello divided the elasticity tensors into eight equivalence classes representing eight different types of symmetry material. Following Forte and Vianello, 16 symmetry classes are obtained for the $\OO(3)$ representation on the space of piezoelectricity tensors $\Piez$ (see \cite{weller2004}). The Piezoelectricity symmetry classes can be also obtained in an easier way using the clips operation (see \cite{olive2019}) as well as the elasticity symmetry classes (see \cite{olive2013}).
+\par ....
+
+
+%------------------------------------------------------------------
+\section{Piezoelectricity}\label{sec:piezoelectricity}
+\par The piezoelectricity law describes the electrical behavior of a material subject to mechanical stress.
+
+\par The mechanical state of a material is characterized by two fields of symmetric second order tensors: the stress tensor $\bsigma$ and the strain tensor $\beps$. The relation between these two fields forms the constitutive law that describes the mechanical behaviour of a specific material. In linear elasticity, the relation is linear, given by the known Hook's law, and permits us to introduce the elasticity tensor.
+
+\begin{defn}
+The \emph{elasticity} tensor is a fourth order tensor $\bE$ that relates the stress and the strain tensors in Hooke's low:
+\begin{align*}
+\bsigma=\bE:\beps
+\end{align*}
+satisfying the index symmetry:
+\begin{equation*}
+\bE_{ijkl}=\bE_{jikl}=\bE_{ijlk}=\bE_{klij}
+\end{equation*}
+The space of elasticity tensors $\Ela$ is a 21 dimensional vector space.
+\end{defn}
+
+\par Similarly to the mechanical state, the electrical state of a material is described by two vector fields: the electric displacement field $\bd$ and the electric field $\be$. These two fields are related and the relation between them forms the constitutive law that describes the electrical behavior of a material.
+
+\begin{defn}
+The \emph{permittivity} tensor is a second order tensor that relates the displacement and electric field:
+\begin{equation*}
+\bd=\bS.\be
+\end{equation*}
+satifying the index symmetry: $\bS_{ij}=\bS_{ji}$.
+The space of the permittivity tensors, $\Sym$, is a 6 dimensional vector space.
+\end{defn}
+
+\par One can study the mechanical and the electrical state of a material at the same time using the coupled law given by:
+\begin{equation*}
+\begin{cases}
+\bsigma=\bE:\beps-\be.\bP\\
+\bd=\bP:\bsigma+\bS.\be
+\end{cases}
+\end{equation*}
+
+\begin{defn}
+The coupled law involves a third order tensor $\bP$ called the \emph{piezoelectricity} tensor satisfying the index symmetry:
+\begin{equation*}
+\bP_{ijk}=\bP_{ikj}
+\end{equation*}
+The space of piezoelectricity tensors, $\Piez$, is an 18 dimensional vector space.
+\end{defn}
+
+\par Provided that the material is homogeneous, its linear electromechanical behaviour is
+defined by a triplet $\mathcal{P}$ of constitutive tensors
+\begin{equation*}
+\mathcal{P}:=(\bE,\bP,\bS)\in \Ela \oplus \Piez \oplus \Sym
+\end{equation*}
+We will denote by $\mathcal{P}$iez the space of piezoelectricity law:
+\begin{equation*}
+\mathcal{P}\text{iez}=\Ela \oplus \Piez \oplus \Sym
+\end{equation*}
+
+
+%------------------------------------------------------------------
+\section{Clips operation}
+\par In this section we will define the notions of symmetry groups and symmetry classes of a group representation. Next, we will introduce the clips operation that will be the tool to find the symmetry classes of the coupled law.
+\par Consider $G$ a compact Lie group with an action $*$ on a vector space $V$ of finite dimension.
+
+\begin{defn}
+A representation of the group $G$ on $V$ is a linear application such that:
+\begin{align*}
+  \rho:\ G\ &\rightarrow\ GL(V) \\ g\ &\rightarrow\ \rho(g) \ \ \ \forall v\in V\ \rho(g)v=g*v
+\end{align*}
+and that verifies $\rho(g_{1}g_{2})=\rho(g_{1})\rho(g_{2})$ (group morphism).
+\end{defn}
+
+Given a group representation $(V,\rho)$, we define the symmetry group of an element $v$ of $V$ to be the group of elements of $G$ that fix $v$:
+\begin{defn}
+The symmetry group of $v\in V$ is defined by:
+  $G_v=\{g\in G;\ \rho(g)v=v\}$.
+\end{defn}
+
+Now we regroup the elements of $V$ in symmetry classes:
+
+\begin{defn}
+The symmetry class (or isotropy class) of a vector $v$ is the conjugacy class of its symmetry group, where the conjugacy class $[H]$ of a subgroup $H$ is defined as follows:
+\begin{equation*}
+[H] := \{g H g^{-1},\ g\in G\}
+\end{equation*}
+In other terms, $v_{1}$ and $v_{2}$ have the same symmetry class if their symmetry groups are conjugate \textit{i.e.}
+\begin{equation*}
+\exists h\in G;\ G_{v_{2}}=h\ G_{v_{1}}\ h^{-1}.
+\end{equation*}
+\end{defn}
+
+\par We denote by $\J(V)$ the set of all symmetry classes of $v\in V$ of the representation $V$:
+\begin{equation*}
+\J(V):=\set{[G_v]:v\in V}
+\end{equation*}
+
+For the $\OO(3)$-representation on the space of elasticity tensors $\Ela$, Forte and Vianello found in \cite{forte1996} $8$ symmetry classes given in this theorem:
+\begin{thm}\label{thm:J(ela)}
+The symmetry classes for an elasticity tensor are
+\begin{equation*}
+\J(\Ela)=\set{[\1],[\ZZ_2],[\DD_2],[\DD_3],[\DD_4],[\octa],[\OO(2)],[\SO(2)]}
+\end{equation*}
+\end{thm}
+
+\par The following theorem gives the symmetry classes of the space $\Piez$. For the clarity of presentation, the notations and definitions of $\OO(3)$-subgroups have been moved to \autoref{sec:appendixA}.
+
+\begin{thm}\label{thm:J(piez)}
+The space $\Piez$ is partitioned into 16 symmetry classes:
+\begin{equation*}
+\J(\Piez)=\set{[\1],[\ZZ_2],[\ZZ_3],[\DD_2^v],[\DD_3^v],[\ZZ_2^{-}],[\ZZ_4^-],[\DD_2],[\DD_3],[\DD_4^h],[\DD_6^h],[\SO(2)],
+[\OO(2)],[\OO(2)^-],[\octa^-],[\OO(3)]}
+\end{equation*}
+\end{thm}
+
+\begin{rem}
+There are many ways to find the symmetry classes. One can follow the approach elaborated by Forte and Vianello in the elasticity case in \cite{forte1996} to apply it in the piezoelastcity case (see \cite{geymonat2002} for instance) or one can use the clips operation as done in \cite{olive2019} and \cite{olive2014}.
+\end{rem}
+
+\par In order to find the symmetry classes of the coupled law, we will define the clips operation between two conjugacy classes.
+\begin{defn}
+Given two conjugacy classes $[H_1]$ and $[H_2]$ of a group $G$, we define their clips as the subset of conjugacy classes
+\begin{equation*}
+[H_1]\circledcirc [H_2]:=\set{[H_1\cap gH_2g^{-1}]:g\in G}
+\end{equation*}
+This definition immediately extends to two families (finite or infinite) $\mathcal{F}_1$ and $\mathcal{F}_2$ of conjugacy classes:
+\begin{equation*}
+\mathcal{F}_1 \circledcirc \mathcal{F}_2=\underset{[H_i]\in \mathcal{F}_i}{\bigcup} [H_1]\circledcirc [H_2].
+\end{equation*}
+\end{defn}
+
+\begin{exmp}
+We have
+\begin{itemize}
+\item $[\1]\circledcirc [H]=\set{[\1]}$
+\item $[G]\circledcirc [H]=\set{[H]}$
+\end{itemize}
+for every conjugacy class $[H]$ and where $\1$ is the trivial group.
+\end{exmp}
+
+Thanks to the following lemma, we will find the symmetry classes of the $\OO(3)$-representation on the space of the piezoelectricity law $\mathcal{P}$iez$=\Ela \oplus \Piez \oplus \Sym$.
+
+\begin{lem}\label{lem:clipslemma}
+Let $V_1$ and $V_2$ be two linear representations of $G$. Then
+\begin{equation*}
+\J(V_1\oplus V_2)=\J(V_1)\circledcirc\J(v_2)
+\end{equation*}
+\end{lem}
+
+%------------------------------------------------------------------
+
+\section{Main result}
+In this section, we regroup, in graphs, the results that we obtained on the calculation of the clips operation between the type II and III $\OO(3)$-subgroups and we will prove those results in the next section.
+\\ Let $m$ and $n$ be two integers and $d=\gcd(m,n)$.
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.6\linewidth]{"Figures piezo/graphe1"}
+		\caption{Clips of $\ZZ_{2n}^-$ with $\ZZ_m$.}
+		\label{fig:graphe1}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.9\linewidth]{"Figures piezo/graphe2"}
+		\caption{Clips of $\ZZ_{2n}^-$ with $\DD_m$.}
+		\label{fig:graphe2}
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe3"}
+		\caption{Clips of $\ZZ_{2n}^-$ with $\tetra$.}
+		\label{fig:graphe3}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe4"}
+		\caption{Clips of $\ZZ_{2n}^-$ with $octa$.}
+		\label{fig:graphe4}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe5"}
+		\caption{Clips of $\ZZ_{2n}^-$ with $\ico$.}
+		\label{fig:graphe5}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.6\linewidth]{"Figures piezo/graphe6'"}
+		\caption{Clips of $\DD_n^v$ with $\ZZ_m$.}
+		\label{fig:graphe6}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe7'"}
+		\caption{Clips of $\DD_n^v$ with $\DD_m$.}
+		\label{fig:graphe7}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe8'"}
+		\caption{Clips of $\DD_n^v$ with $\tetra$.}
+		\label{fig:graphe8}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.9\linewidth]{"Figures piezo/graphe9'"}
+		\caption{Clips of $\DD_n^v$ with $\octa$.}
+		\label{fig:graphe9}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.9\linewidth]{"Figures piezo/graphe10'"}
+		\caption{Clips of $\DD_n^v$ with $\ico$.}
+		\label{fig:graphe10}
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.6\linewidth]{"Figures piezo/graphe11'"}
+		\caption{Clips of $\DD_{2n}^h$ with $\ZZ_m$.}
+		\label{fig:graphe11}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=1.2\linewidth]{"Figures piezo/graphe12'"}
+		\caption{Clips of $\DD_{2n}^h$ with $\DD_m$.}
+		\label{fig:graphe12}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.9\linewidth]{"Figures piezo/graphe13'"}
+		\caption{Clips of $\DD_{2n}^h$ with $\tetra$.}
+		\label{fig:graphe13}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.9\linewidth]{"Figures piezo/graphe14'"}
+		\caption{Clips of $\DD_{2n}^h$ with $\octa$.}
+		\label{fig:graphe14}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}
+		\centering \includegraphics[width=0.6\linewidth]{"Figures piezo/graphe15'"}
+		\caption{Clips of $\DD_{2n}^h$ with $\ico$.}
+		\label{fig:graphe15}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.7\linewidth]{"Figures piezo/graphe16"}
+		\caption{Clips of $\octa^-$ with $\ZZ_m$.}
+		\label{fig:graphe16}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.5\linewidth}
+		\centering \includegraphics[width=0.8\linewidth]{"Figures piezo/graphe17"}
+		\caption{Clips of $\octa^-$ with $\DD_m$.}
+		\label{fig:graphe17}
+	\end{minipage}
+\end{figure}
+
+\newpage
+
+
+
+%-------------------------------------------------------------------
+
+\section{Clips between type II and III $\OO(3)$-subgroups}
+\par Finding the symmetry classes of the piezoelectricity law involves the calculation of clips operation between $\OO(3)$-subgroups of different types. However, the clips operation between subgroups of type I and II has been already calculated in different papers, see for instance \cite{olive2019}. For this reason, in this section, we will be interested in the clips between subgroups of type II and III only.
+\par First let us introduce the $\OO(3)$-subgroups, there exists three types. Given $\Gamma$ a subgroup of $\OO(3)$, $\Gamma$ belongs to one of the three types of the following table.
+\bigskip
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+\hline
+\multicolumn{3}{|c|}{$\OO(3)$-subgroups} \\
+ \hline
+\bf{Type I} & \bf{Type II} & \bf{Type III}\\
+ \hline
+ $\Gamma$ is a subgroup of $\SO(3)$ & $-\id \in \Gamma$ & $\Gamma$ is not a subgroup of $\SO(3)$ and $-\id \notin \Gamma$\\
+ \hline
+\end{tabular}
+\end{center}
+\bigskip
+
+The description of each subgroup is moved to \autoref{sec:appendixA}.
+\begin{itemize}
+\item For the subgroups of \textbf{type I}: Every closed subgroup of $\SO(3)$ is conjugate to one of
+\begin{equation*}
+\SO(3),\quad \OO(2),\quad \SO(2), \quad \DD_n, \quad \ZZ_n, \quad \tetra, \quad \octa, \quad \ico, \text{ or} \quad \1
+\end{equation*}
+\item For the subgroups of \textbf{type II}: They are subgroups of type I to which we add the group $\ZZ_2^c=\set{\pm \id}$:
+\begin{equation*}
+\ZZ_m\oplus \ZZ_2^c,\quad \DD_m\oplus \ZZ_2^c,\quad \tetra\oplus \ZZ_2^c,\quad \octa\oplus \ZZ_2^c, \quad \ico\oplus \ZZ_2^c
+\end{equation*}
+\item For the subgroups of \textbf{type III}: There are four subgroups of $\OO(3)$ of type III that we construct using a subgroup of type I (see lemma below):
+\begin{equation*}
+\ZZ_{2n}^-,\quad \DD_n^v,\quad \DD_{2n}^h,\quad \octa^-
+\end{equation*}
+\end{itemize}
+
+\begin{lem}\label{lem:4.1}
+Let $K$ a subgroup of type I and $L\subset K$ a subgroup of index 2. \\
+Let $g\in K \setminus L$ then $L\cup (-g L)$ is a subgroup of type III.
+\end{lem}
+
+Let's illustrate this lemma by an example:
+\begin{exmp}\label{exmp:1}
+Let $K=\ZZ_4=\set{\underline{e},r(e_3,\frac{\pi}{2}),\underline{r(e_3,\pi)},r(e_3,\frac{3\pi}{2})}$ and $L=\ZZ_2=\set{e,r(e_3,\pi)}\subset \ZZ_4$.
+\\Take $g=r(e_3,\frac{\pi}{2})\in K\setminus L$, then
+\begin{align*}
+\ZZ_4^-&=\ZZ_2\cup(-r(e_3,\frac{\pi}{2})\ZZ_2)\\
+       &=\set{e,r(e_3,\pi),-r(e_3,\frac{\pi}{2}),-r(e_3,\frac{3\pi}{2})}
+\end{align*}
+\end{exmp}
+
+
+To find the clips between subgroups of type II and III we will use the following lemma:
+\begin{lem}\label{thelemma}
+Let $\Gamma$ be a subgroup of type III and $L=\Gamma\cap \SO(3)$. Then for every subgroup of type II, $K\oplus\ZZ_2^c$ we have
+\begin{equation*}
+\Gamma\cap(K\oplus \ZZ_2^c)=(L\cap K)\cup(-(\gamma L\cap K))
+\end{equation*}
+where $\gamma\in L$.
+\end{lem}
+\begin{proof}
+We have $K\oplus \ZZ_2^c=K\cup (-K)$ and $\Gamma=L\cup (-\gamma L)$ (lemma \ref{lem:4.1}). Then
+\begin{align*}
+\Gamma\cap (K\oplus \ZZ_2^c)&=L\cup(-\gamma L)\cap(K\cup (-K))\\
+                            &=(L\cap K)\cup (L\cap(-K))\cup (-\gamma L\cap K)\cup (-\gamma L\cap(-K)) \\
+                            &=(L\cap K)\cup (-(\gamma L\cap K))
+\end{align*}
+Hence the result.
+\end{proof}
+
+\par In the next subsections, we will focus on finding $\bf{\Gamma\cap (g K g^{-1}\oplus \ZZ_2^c)}$ for $g\in \SO(3)$ in order to find $[\Gamma] \circledcirc [K\oplus \ZZ_2^c]$ since
+\begin{align*}
+[\Gamma] \circledcirc [K\oplus \ZZ_2^c]&=\set{[\Gamma\cap g(K\oplus \ZZ_2^c)g^{-1}],g\in \SO(3)}\\
+                                     &=\set{[\Gamma\cap (g K g^{-1}\oplus \ZZ_2^c)],g\in \SO(3)}
+\end{align*}
+So by applying the previous lemma, we calculate $\Gamma\cap (g K g^{-1}\oplus \ZZ_2^c)$ which leads us to $[\Gamma] \circledcirc [K\oplus \ZZ_2^c]$.
+
+%--------------------------------------------------------------------
+\subsection{Clips with $\ZZ_{2n}^-$}
+\par In this part we will calculate the clips operation between $\ZZ_{2n}^-$ and each of the subgroups of type II. First, we construct $\ZZ_{2n}^-$ from the couple $(\ZZ_{2n},\ZZ_n)$ as we did in example \ref{exmp:1}:
+\begin{equation*}
+\ZZ_{2n}^-=\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc,n-1,\quad -r(e_3,\frac{(2k+1)\pi}{n});k=0,\dotsc,n-1}.
+\end{equation*}
+
+\begin{lem}\label{lemma1}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\ZZ_{2n}^{-}] \circledcirc [\ZZ_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_{2d}^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\ZZ_{2n}^- \cap (g\ZZ_m g^{-1}\oplus \ZZ_2^c)$. By the previous lemma, $L=\ZZ_{2n}^-\cap \SO(3)=\ZZ_n$ and
+\begin{align*}
+H=(\ZZ_n\cap g \ZZ_m g^{-1})\cup (-(\gamma\ZZ_n\cap g \ZZ_m g^{-1}))
+\end{align*}
+where $\gamma=r(e_3,\frac{\pi}{n})\in \ZZ_{2n}\setminus \ZZ_n$.\\
+We have $\gamma \ZZ_n =r(e_3,\frac{\pi}{n}).\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1}=\set{r(e_3,\frac{(2k+1)\pi}{n});k=0,\dotsc,n-1}$.\\
+Hence,
+\begin{align*}
+H=&\left(\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1}\cap \set{r(ge_3,\frac{2k\pi}{m});k=0,\dotsc, m-1}\right)\bigcup\\
+       &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n});k=0,\dotsc, n-1}\cap \set{r(ge_3,\frac{2k\pi}{m});k=0,\dotsc, m-1}\right)
+\end{align*}
+If $g e_3$ and $e_3$ are not colinear then $H=\1$.\\
+Otherwise if only $ge_3=\pm e_3$, for the first intersection we have to solve $\displaystyle \frac{2k_1}{n}=\frac{2k_2}{m}$:
+\begin{align*}
+ \frac{k_1}{n}=\frac{k_2}{m} &\Leftrightarrow \frac{k_1}{n_1d}=\frac{k_2}{m_1d} \quad m_1\wedge n_1=1 \\& \Leftrightarrow k_1m_1=k_2n_1\\ & \Leftrightarrow n_1/k_1 \text{ using Gauss lemma} \\& \Leftrightarrow k_1=n_1k'
+\end{align*}
+Replacing in $ \frac{k_1}{n}=\frac{k_2}{m}$ we get $k_2=k'm_1$. Hence on one hand we get $\frac{2k_1\pi}{n}=\frac{2k'n_1\pi}{dn_1}=\frac{2k'\pi}{d}$ and on the other hand $\frac{2(k_2)\pi}{m}=\frac{2k'm_1\pi}{m_1d}$.\\
+We deduce that the intersection is $\ZZ_d=\set{r(e_3,\frac{2k\pi}{d});k=0,\dotsc,n-1}$.
+\\For the second intersection, we have to solve $\displaystyle \frac{2k_1+1}{n}=\frac{2k_2}{m}$ which is equivalent to $(2k_1+1)m=2k_2n$, we deduce that this has a solution only if $m$ is even:
+\begin{align*}
+(2k_1+1)m=2k_2n & \Leftrightarrow (2k_1+1)d m_1=2k_2d n_1 \quad m_1\wedge n_1=1 \\ & \Leftrightarrow m_1 \text{ is necessarily even} \ m_1=2p_1 \\& \Leftrightarrow (2k_1+1)p_1=k_2n_1\\ & \Leftrightarrow p_1/k_2 n_1 \quad p_1\wedge n_1=1 \\ & \Leftrightarrow p_1/k_2 \text{ using Gauss lemma} \\& \Leftrightarrow k_2=p_1k'
+\end{align*}
+Replacing in $(2k_1+1)p_1=k_2n_1$ we get $(2k_1+1)p_1=p_1k'n_1 \implies k'$ is odd. Hence on one hand we get
+\begin{align*}
+\frac{2k_2\pi}{m}=\frac{2p_1k'\pi}{2dp_1}=\frac{k'\pi}{d}
+\end{align*}
+and on the other hand
+\begin{align*}
+\frac{2(k_1+1)\pi}{n}=\frac{k'n_1\pi}{n_1d}.
+\end{align*}
+We deduce that the intersection is $\set{r(e_3,\frac{(2k+1)\pi}{d});k=0,\dotsc,n-1}$.
+\\Hence,
+\begin{equation*}H=
+\begin{cases}
+\ZZ_{2d-} \quad \text{ if $m$ is even and $\frac{m}{d}$ is even}\\
+\ZZ_d  \qquad \text{else}
+\end{cases}.
+\end{equation*}
+\end{proof}
+
+\begin{lem}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\ZZ_{2n}^{-}] \circledcirc [\DD_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_{2d}^-],[\ZZ_2],[\ZZ_2^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+We recall that
+\begin{equation*}
+\DD_m=\set{r(e_3,\frac{2k\pi}{m});k=0,\dotsc, m-1,\quad r(b_i,\pi); i=1,\dotsc,m}
+\end{equation*}
+Where $b_i$ are the secondary axis of the dihedral such that $b_1=e_1$ and $b_k=r(e_3,\frac{\pi}{m})b_{k-1}\ \ \forall k =2,\dotsc,m$.\\
+Let $H=\ZZ_{2n}^- \cap (g\DD_m g^{-1}\oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\ZZ_{2n}^-\cap \SO(3)=\ZZ_n$ and we take $\gamma=r(e_3,\frac{\pi}{n})\in \ZZ_{2n}\setminus\set{\ZZ_n}$. Then
+\begin{align*}
+H&=(\ZZ_n\cap g \DD_m g^{-1})\cup (-(\gamma\ZZ_n\cap g \DD_m g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi)}\right)\bigcup
+ -\left(\set{r(e_3,\frac{(2k+1)\pi}{n})}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi)}\right)
+\end{align*}
+If neither $ge_3$ nor $gb_i$ is colinear to $e_3$ then $H=\1$.\\
+Otherwise, if only $ge_3=\pm e_3$ then
+\begin{equation*}
+H=\ZZ_{2n}^{-} \cap g(\ZZ_m \oplus \ZZ_2^c)g^{-1}=
+\begin{cases}
+\ZZ_d\quad \text{if $m$ is odd} \\
+\ZZ_{2d}^- \quad \text{if $m$ and $\frac{m}{d}$ even}
+\end{cases}.
+\end{equation*}
+If only $gb_i=\pm e_3$, we have to solve $\displaystyle \frac{2k\pi}{n}=\pi$ for the first intersection and $\displaystyle \frac{(2k+1)\pi}{n}=\pi$ for the second intersection. Hence we get on one hand $\ZZ_2$ if $n$ is even and $\1$ if $n$ is odd and on the other hand $\set{r(e_3,\pi)}$ if n is odd and $\emptyset$ if n is even. \\We deduce that the union is
+$
+\begin{cases}
+\ZZ_2 \quad \text{if $n$ is even}\\
+\ZZ_2^{-} \quad \text{if $n$ is odd}
+\end{cases}.$
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\ZZ_{2n}^-]\circledcirc [\tetra\oplus\ZZ_2^c]=\set{[\1],[\ZZ_3],[\ZZ_2],[\ZZ_2^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+We recall that
+\begin{align*}
+\tetra= \displaystyle \biguplus_{i=1}^4 \ZZ_3^{vt_i}\cup \biguplus_{j=1}^3 \ZZ_2^{et_j}
+\end{align*}
+where $vt_i$ and $et_j$ are the vertices axes and edges axes of the tetrahedron (see \cite[Appendix A]{olive2019} for more details on the tetrahedral subgroup).\\
+Let $H=\ZZ_{2n}^- \cap (g\tetra g^{-1}\oplus \ZZ_2^c)$
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\ZZ_n\cap g \tetra g^{-1})\cup (-(\gamma\ZZ_n\cap g \tetra g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(g vt_i,\frac{2k\pi}{3});k=0,\dotsc, 2,\ r(g et_j,k\pi); k=0,1}\right)\bigcup\\
+ &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n})}\cap \set{r(g vt_i,\frac{2k\pi}{3});k=0,\dotsc, 2,\ r(g et_j,k\pi); k=0,1}\right)
+\end{align*}
+If neither $gvt_i$ nor $get_j$ is colinear to $e_3$ then $H=\1$.\\
+Otherwise, if only $gvt_i=\pm e_3$ then $H=\ZZ_{2n}^- \cap (g\ZZ_m g^{-1}\oplus \ZZ_2^c)$ where $m=3$ odd. Hence, $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\\Now if only $get_j=\pm e_3$ then we have to solve $\displaystyle \frac{2k\pi}{n}=\pi$ which gives $\ZZ_2$ if $n$ is even and $\1$ if not and we have to solve $\displaystyle \frac{(2k+1)\pi}{n}=\pi$ which gives $\set{r(e_3,\pi)}$ if $n$ is odd and $\emptyset$ if not. So we deduce that the union is either $\ZZ_2$ or $\ZZ_2^-$.
+\end{proof}
+
+\begin{lem}\label{lem5.7}
+We have
+\begin{equation*}
+[\ZZ_{2n}^-]\circledcirc[\octa\oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_4],[\ZZ_2^-],[\ZZ_4^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+We recall that
+\begin{align*}
+\octa= \displaystyle \biguplus_{i=1}^3 \ZZ_4^{fc_i} \cup \biguplus_{j=1}^4 \ZZ_3^{vc_j}\cup \biguplus_{l=1}^6 \ZZ_2^{ec_l}
+\end{align*}
+where $vc_i,\ ec_j$ and $fc_l$ are respectively the vertices, edges, and faces axes of the cube (see \cite[Appendix A]{olive2019}).\\
+Let $H=\ZZ_{2n}^- \cap (g \octa g^{-1}\oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\ZZ_n\cap g \octa g^{-1})\cup (-(\gamma\ZZ_n\cap g \octa g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})} \cap \set{r(gfc_i,\frac{2k\pi}{4});k=0,\dotsc,3,\ r(g vc_j,\frac{2k\pi}{3});k=0,1,2,\ r(g ec_l,\pi)}\right)\bigcup\\
+ &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n})}\cap \set{r(gfc_i,\frac{2k\pi}{4});k=0,\dotsc,3,\ r(g vc_j,\frac{2k\pi}{3});k=0,1,2,\ r(g ec_l,\pi)}\right)
+\end{align*}
+If none of $gfc_i$, $gvc_j$ and $ ec_l$ is colinear to $e_3$ then $H=\1$.\\
+Otherwise, if only $gfc_i=\pm e_3$ then $H=\ZZ_{2n}^- \cap (g\ZZ_m g^{-1}\oplus \ZZ_2^c)$ where $m=4$ even. \\ Hence we have:
+\begin{itemize}
+\item If $n$ is even then we have 2 cases
+\begin{itemize}
+\item $4|n$ hence $d=\gcd(4,n)=4$ and $\frac{4}{d}=1$ is odd so as in the previous lemmas $H=\ZZ_d=\ZZ_4$.
+\item $4\nmid n$ hence $d=\gcd(4,n)=2$ and $\frac{4}{d}=2$ is even so as in the previous lemmas $H=\ZZ_{2d}^-=\ZZ_4^-$.
+\end{itemize}
+\item If $n$ is odd then $d=\gcd(4,n)=1$ and $\frac{4}{d}=4$ is even so $H=\ZZ_{2d}^-=\ZZ_2^-$
+\end{itemize}
+Now if only $gvc_j=\pm e_3$ then we get $\ZZ_3$ if $3|n$ and $\1$ if not.\\
+Finally, if only $gec_l=\pm e_3$ then we get $\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if $n$ is odd.
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\ZZ_{2n}^-]\circledcirc[\ico\oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_5],[\ZZ_2^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+We recall that
+\begin{align*}
+\ico= \displaystyle \biguplus_{i=1}^6 \ZZ_5^{fd_i} \cup \biguplus_{j=1}^{10} \ZZ_3^{vd_j}\cup \biguplus_{l=1}^{15} \ZZ_2^{ed_l}
+\end{align*}
+where $vc_i,\ ec_j$ and $fc_l$ are respectively the vertices, edges, and faces axes of the dodecahedron (see \cite[Appendix A]{olive2019}).\\
+Let $H=\ZZ_{2n}^- \cap (g \ico g^{-1}\oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\ZZ_n\cap g \ico g^{-1})\cup (-(\gamma\ZZ_n\cap g \ico g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})} \cap \set{r(gfd_i,\frac{2k\pi}{5});k=0,\dotsc,4,\ r(g vd_j,\frac{2k\pi}{3});k=0,1,2,\ r(g ed_l,\pi)}\right)\bigcup\\
+ &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n})}\cap \set{r(gfd_i,\frac{2k\pi}{5});k=0,\dotsc,4,\ r(g vd_j,\frac{2k\pi}{3});k=0,1,2,\ r(g ed_l,\pi)}\right)
+\end{align*}
+If none of $gfd_i$, $gvd_j$ and $ ed_l$ is colinear to $e_3$ then $H=\1$.\\
+Otherwise, if only $gfd_i=\pm e_3$ then $H=\ZZ_{2n}^- \cap (g\ZZ_m g^{-1}\oplus \ZZ_2^c)$ where $m=5$. Hence, $H=\ZZ_5$ if $5|n$ and $\1$ if not. \\
+Now if only $gvd_j=\pm e_3$ then we get $\ZZ_3$ if $3|n$ and $\1$ if not.\\
+Finally, if only $ged_l=\pm e_3$ then we get $\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if $n$ is odd.
+\end{proof}
+
+%--------------------------------------------------------------------------------
+\subsection{Clips with $\DD_{n}^v$}
+\par In this part we will calculate the clips operation between $\DD_{n}^v$ and each of the subgroups of type II. First, we construct $\DD_{n}^v$ from the couple $(\DD_{n},\ZZ_n)$, we have
+\begin{equation*}
+\DD_n=\ZZ_n\cup \ZZ_2^{b_1} \cup \ZZ_2^{b_2} \cup \dotsc \cup \ZZ_2^{b_n}
+\end{equation*}
+where $b_i$ are the secondary axis of the dihedral such that $b_1=e_1$ and $b_k=r(e_3,\frac{\pi}{n})b_{k-1}\ \ \forall k =2,\dotsc,n$.
+Hence,
+\begin{equation*}
+\DD_{n}^v=\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc,n-1,\ -r(b_1,\pi),\dotsc,\ -r(b_n,\pi)}.
+\end{equation*}
+
+\begin{lem}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\DD_{n}^{v}] \circledcirc [\ZZ_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{n}^v \cap (g\ZZ_m g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\DD_{n}^v\cap \SO(3)=\ZZ_n$ and
+\begin{align*}
+H=(\ZZ_n\cap g \ZZ_m g^{-1})\cup (-(\gamma\ZZ_n\cap g \ZZ_m g^{-1}))
+\end{align*}
+where $\gamma=r(b_1,\pi)\in \DD_{n}\setminus\set{\ZZ_n}$.\\
+We have $\gamma \ZZ_n =r(b_1,\pi).\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1}=\set{r(b_1,\pi),\dotsc,r(b_n,\pi)}$.\\
+Hence,
+\begin{align*}
+H=\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(ge_3,\frac{2k\pi}{m})}\right)\bigcup-\left(\set{r(b_1,\pi),\dotsc,r(b_n,\pi)}\cap \set{r(ge_3,\frac{2k\pi}{m})}\right)
+\end{align*}
+If $ge_3$ is neither colinear to $e_3$ nor to $b_i,\forall i$ then $H=\1$.\\
+Otherwise, if only $ge_3=\pm e_3$, then $H=\ZZ_n\cap\ZZ_m=\set{\1,\ZZ_d}$ (done in lemma \ref{lemma1}).\\
+Now if only $ge_3=\pm b_i$ then $H=\begin{cases} \1 \qquad \qquad \qquad \qquad \text{  if } m \text{ is odd} \\ \1\cup -r(b_i,\pi)=\ZZ_2^{b_i-} \text{  if } m \text{ is even} \end{cases}$.\\
+Hence the result.
+\end{proof}
+
+\begin{lem}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\DD_{n}^{v}] \circledcirc [\DD_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_2],[\ZZ_2^{b_i-}],[\DD_d^v]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{n}^v \cap (g\DD_m g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\ZZ_n$ and $\gamma=r(b_1,\pi)$. Then
+\begin{align*}
+H&=(\ZZ_n\cap g \DD_m g^{-1})\cup (-(\gamma\ZZ_n\cap g \DD_m g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi)}\right)\bigcup-\left(\set{r(b_i,\pi)}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi)}\right)
+\end{align*}
+If $ge_3$ is neither colinear to $e_3$ nor to $b_i$ and $gb_i$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item if only $ge_3=\pm e_3$ then $H=\ZZ_n\cap\ZZ_m=\set{\1,\ZZ_d}$ (done in lemma \ref{lemma1}).
+\item If only $gb_i=\pm e_3$, then
+\begin{align*}
+H&=\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1}\cap \ \set{r(ge_3,\frac{2k\pi}{m}),r(b_1,\pi),\dotsc,\underbrace{r(\pm e_3,\pi)}_{\text{ith position}},\dotsc, r(b_m,\pi)}\\
+&=
+\begin{cases}
+\ZZ_2 \quad \text{if $n$ is even}\\
+\1 \quad \text{if $n$ is odd}
+\end{cases}
+\end{align*}
+\item If only $ge_3=\pm b_i$ then
+\begin{align*}
+H&=\1\bigcup -\left(\set{r(b_1,\pi),\dotsc,r(b_n,\pi)}\cap \set{r(\pm b_i,\frac{2k\pi}{m});k=0,\dotsc, m-1,\ r(gb_i,\pi); i=1,\dotsc,m}\right)\\
+&=
+\begin{cases}
+\ZZ_2^{b_i-} \quad \text{if $m$ is even}\\
+\1 \quad \text{if $m$ is odd}
+\end{cases}
+\end{align*}
+\item If only $gb_i=\pm b_i$ then $H=\ZZ_2^{b_i-} \ \forall n$
+\item Finally, if $ge_3=\pm e_3$ and $gb_i=\pm b_i,\ \forall i$ (such $g$ exists, take for instance $g=\id$) then
+\begin{align*}
+H&=\left(\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1}\cap \set{r(e_3,\frac{2k\pi}{m});k=0,\dotsc, m-1,\ r(b_i,\pi); i=1,\dotsc,m}\right)\\
+           & \bigcup -\left(\set{r(b_1,\pi),\dotsc,r(b_n,\pi)}\cap \set{r(e_3,\frac{2k\pi}{m});k=0,\dotsc, m-1,\ r(b_i,\pi); i=1,\dotsc,m}\right)\\
+           &=\set{r(e_3,\frac{2k\pi}{d});k=0,\dotsc,d-1}\cup-\set{r(b_i,\pi),i=1,\dotsc,d}\\
+           &=\DD_d^v
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{n}^{v}] \circledcirc [\tetra \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{n}^v \cap(g \tetra g^{-1}\oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\ZZ_n\cap g \tetra g^{-1})\cup (-(\gamma\ZZ_n\cap g \tetra g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)\bigcup-\left(\set{r(b_i,\pi)}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)
+\end{align*}
+If $\forall i\ gvt_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ get_j$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item if only $gvt_i=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $get_j=\pm e_3$, then $H=\ZZ_2$ if $n$ is even and $\1$ if not.
+\item If only $gvt_i=\pm b_i$ then $H=\1$.
+\item If only $get_j=\pm b_i$ then $H=\1\cup -{r(b_i,\pi)}=\ZZ_2^{b_i-}.$
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{n}^{v}] \circledcirc [\octa \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_4],[\ZZ_{2}^{b_i-}],[\DD_2^v],[\DD_4^v]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{n}^v \cap(g \octa g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{multline*}
+H=(\ZZ_n\cap g \octa g^{-1})\cup (-(\gamma\ZZ_n\cap g \octa g^{-1}))\\
+ =\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),\ r(gec_l,\pi)}\right)\bigcup \\ -\left(\set{r(b_i,\pi)}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),\ r(gec_l,\pi)}\right)
+\end{multline*}
+If $\forall i\ gfc_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ gvc_j$ is neither colinear to $e_3$ nor $b_i$ and $\forall l\ gec_l$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only  $gfc_i=\pm e_3$ then $H=
+\begin{cases}
+\ZZ_4 \text{ if } 4|n \\
+\ZZ_2 \text{ if $n$ is even but } 4 \nmid n\\
+\1 \quad \text{if $n$ is odd}
+\end{cases}$
+\item If only $gvc_j=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $gec_l=\pm e_3$ then $H=\ZZ_2$ if $n$ is even and $\1$ if not.
+\item If only $gfc_i=\pm b_i$ then $H=\ZZ_2^{b_i-}$
+\item If only $gvc_j=\pm b_i$ then $H=\1$.
+\item If only $gec_l=\pm b_i$ then $H=\1\cup -{r(b_i,\pi)}=\ZZ_2^{b_i-}.$
+\item If $gfc_i=\pm e_3$ and $gec_l=\pm b_i$ (such $g$ exists since if $fc_i=e_3$ then $g$ will be a rotation around $e_3$ that turns one of the $ec_l$ to one of the $b_i$) then we have 3 cases:
+\begin{itemize}
+\item If $4|n$ then $H=\ZZ_4\cup \set{r(b_i,\pi),i=1,\dotsc,4}=\DD_4^v$.\\
+In fact, if we take $g$ to be the rotation of angle $\frac{\pi}{4}$ that turns the first edge axis to $b_1=e_1$ (see \cite[figure 10]{olive2019}), having that $4|n$ implies $n=4p$ and so the angle between the axis $b_i$ is at most $\frac{\pi}{4}$ and it is equal to $\frac{\pi}{4p}=\frac{1}{p}\frac{\pi}{4}$. So when we rotate with an angle $\frac{\pi}{4}$ around $e_3$ we will have at least 2 edge axis and 2 face axis that will superpose with 4 $b_i$ hence the existence of 4 $b_i$ in the second intersection.
+\item if $4\nmid n$ and $n$ even then $H=\DD_2^v$ (same reasoning as in the first case).
+\item if $n$ odd then $H=\ZZ_2^{b_i-}$
+\end{itemize}
+\item If $g$ is the identity rotation, the discussion as well as the results will be identical to the previous ones.
+\item If $gfc_i=\pm b_i$ and $gec_l=\pm e_3$ (we can take $g$ to be the rotation around $e_1$) then
+\begin{itemize}
+\item If $n$ is even then $H=\DD_2^v$ since in the second intersection we will get one $r(b_i,\pi)$ from the fact that $gfc_i=\pm b_i$ and another one from $gec_l=\pm e_3$ since the rotation of $ec_l$ to $e_3$ will lead the rotation of another $ec_l$ to $e_2=b_i$ for some $i$.
+\item If $n$ is odd then $H=\ZZ_2^{b_i-}$.
+\end{itemize}
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{n}^{v}] \circledcirc [\ico \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_5],[\ZZ_{2}^{b_i}],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{n}^v \cap (g \ico g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{multline*}
+H=(\ZZ_n\cap g \ico g^{-1})\cup (-(\gamma\ZZ_n\cap g \ico g^{-1}))\\
+ =\left(\set{r(e_3,\frac{2k\pi}{n})}\cap \set{r(gfd_i,\frac{2k\pi}{5}),r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)\\
+ \bigcup-\left(\set{r(b_i,\pi)}\cap \set{r(gfd_i,\frac{2k\pi}{5}),r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)
+\end{multline*}
+If $\forall i\ gfd_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ gvd_j$ is neither colinear to $e_3$ nor $b_i$ and $\forall l\ ged_l$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gfd_i=\pm e_3$ then $H=\ZZ_5$ if $5|n$ and $\1$ if not.
+\item If only $gvd_j=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $ged_l=\pm e_3$, then $H=\ZZ_2$ if $n$ is even and $\1$ if not.
+\item If only $gfd_i=\pm b_i$ then $H=\1$.
+\item If only $gvd_j=\pm b_i$ then $H=\1$.
+\item If only $ged_l=\pm b_i$ then $H=\1\cup -{r(b_i,\pi)}=\ZZ_2^{b_i-}.$
+\end{itemize}
+\end{proof}
+
+\subsection{Clips with $\DD_{2n}^h$}
+\par In this part we will calculate the clips operation between $\DD_{2n}^h$ and each of the subgroups of type II. First, we construct $\DD_{2n}^h$ from the couple $(\DD_{2n},\DD_n)$, we have
+\begin{equation*}
+\DD_{2n}=\ZZ_{2n}\cup \ZZ_2^{b_1} \cup \ZZ_2^{b_2} \cup \dotsc \cup \ZZ_2^{b_{2n}}
+\end{equation*}
+where the secondary axis of $D_{2n}$ are given by:
+\begin{equation*}
+b_1=e_1 \text{ and } b_k=r(e_3,\frac{\pi}{2n})b_{k-1}
+\end{equation*}
+And $\DD_n\subset \DD_{2n}$ such that the secondary axis of $\DD_n$ are given by:
+\begin{equation*}
+b_1=e_1 \text{ and } b_k=r(e_3,\frac{\pi}{n})b_{k-1}
+\end{equation*}
+So we remark that the secondary axis of $\DD_n$ are the $b_i$ of $\DD_{2n}$ with odd indices.
+Hence,
+\begin{align*}
+\DD_{2n}&=\displaystyle \set{\overbrace{\id,r(e_3,\frac{2\pi}{n}),
+r(e_3,\frac{4\pi}{n}),\dotsc,r(e_3,\frac{(n-2)\pi}{n}),r(b_1,\pi),r(b_3,\pi),\dotsc,r(b_{2n-1},\pi)}^{\DD_n}}\cup \\ & \set{r(e_3,\frac{\pi}{n}),r(e_3,\frac{3\pi}{n}),\dotsc,r(e_3,\frac{(n-1)\pi}{n}),r(b_2,\pi),\dotsc,r(b_{2n},\pi)}
+\end{align*}
+We deduce,
+\begin{align*}
+\DD_{2n}^h&=\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi);k=0,\dotsc,n-1}\cup\\
+          &\set{-r(e_3,\frac{(2k+1)\pi}{n});k=0,\dotsc,n-1,-r(b_{2k},\pi);k=1,\dotsc,n}
+\end{align*}
+
+
+\begin{lem}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\DD_{2n}^{h}] \circledcirc [\ZZ_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_{2d}^-],[\ZZ_2^{b_i}],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{2n}^h \cap (g\ZZ_m g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\DD_{2n}^h\cap \SO(3)=\DD_n$ and
+\begin{equation*}
+H=(\DD_n\cap g \ZZ_m g^{-1})\cup (-(\gamma\DD_n\cap g \ZZ_m g^{-1}))
+\end{equation*}
+where $\gamma=r(e_3,\frac{\pi}{n})\in \DD_{2n}\setminus\set{\DD_n}$.
+We have
+\begin{align*}
+\gamma \DD_n &=r(e_3,\frac{\pi}{n}).\set{r(e_3,\frac{2k\pi}{n});k=0,\dotsc, n-1,r(b_1,\pi),r(b_3,\pi),\dotsc,r(b_{2n-1},\pi}\\
+             &=\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_2,\pi),r(b_4,\pi),\dotsc,r(b_2n,\pi)}\\
+             &=\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi);k=0,\dotsc,n-1}
+\end{align*}
+Indeed, we can remark first that
+\begin{equation*}
+r(b_i,\pi)=r(e_3,\frac{2(i-1)\pi}{2n}).r(b_1,\pi)\quad i=1,\dotsc,2n
+\end{equation*}
+Then
+\begin{align*}
+\text{For } i=0,\dotsc,n-1 \quad r(e_3,\frac{\pi}{n}).r(b_{2i+1},\pi)&=r(e_3,\frac{\pi}{n}).r(e_3,\frac{2(2i+1-1)\pi}{2n}).r(b_1,\pi)\\
+                                    &=r(e_3,\frac{\pi}{n})r(e_3,\frac{2i\pi}{n})r(b_1,\pi)\\
+                                    &=r(e_3,\frac{(2i+1)\pi}{n}r(b_1,\pi)\\
+                                    &=r(b_{2(i+1)},\pi)
+\end{align*}
+Hence,
+\begin{align*}
+H=&\left(\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi);k=0,\dotsc, n-1}\cap \set{r(ge_3,\frac{2k\pi}{m});k=0,\dotsc,m-1}\right)\bigcup\\
+  &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi);k=0,\dotsc,n-1}\cap \set{r(ge_3,\frac{2k\pi}{m});k=0,\dotsc, m-1}\right)
+\end{align*}
+If $ge_3$ is neither colinear to $e_3$ nor to $b_i,\forall i$ then $H=\1$.\\
+Otherwise, if only $ge_3=\pm e_3$, then $H=\set{\1,\ZZ_d,\ZZ_{2d}^-}$ (done in lemma \ref{lemma1}).\\
+Now if only $ge_3=\pm b_i$ with $i$ odd then $H=\begin{cases} \1 \qquad \text{  if $m$ is odd} \\ \ZZ_2^{b_i} \quad \text{  if $m$ is even} \end{cases}$.\\
+If only $ge_3=\pm b_i$ with $i$ even then $H=\begin{cases} \1 \qquad \qquad \qquad \qquad \text{  if $m$ is odd} \\ \1\cup -r(b_i,\pi)=\ZZ_2^{b_i-} \text{  if $m$is even} \end{cases}$.
+\end{proof}
+
+\begin{lem}
+Let $m,\ n \geq 2$ be two integers and $d=\gcd(m,n)$. Then
+\begin{equation*}
+[\DD_{2n}^{h}] \circledcirc [\DD_m \oplus\ZZ_2^c]=\set{[\1],[\ZZ_d],[\ZZ_{2d}^-],[\ZZ_2],[\ZZ_2^-],[\ZZ_2^{b_i}],[\ZZ_2^{b_i-}],[\DD_{2d}^h]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{2n}^h \cap (g\DD_m g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\DD_n$ and $\gamma=r(e_3,\frac{\pi}{n})$. Then
+\begin{align*}
+H&=(\DD_n\cap g \DD_m g^{-1})\cup (-(\gamma\DD_n\cap g \DD_m g^{-1}))\\
+ &=\left(\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi)}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi); i=1,\dotsc,m}\right)\bigcup\\
+ &-\left(\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi)}\cap \set{r(ge_3,\frac{2k\pi}{m}),r(gb_i,\pi); i=1,\dotsc,m}\right)
+\end{align*}
+If $ge_3$ is neither colinear to $e_3$ nor to $b_i \ \forall i$ and $gb_i$ is neither colinear to $e_3$ nor $b_i\ \forall i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item if only $ge_3=\pm e_3$ then $H=\set{\1,\ZZ_d,\ZZ_{2d}^-}$.
+\item If only $gb_i=\pm e_3$, then $H=
+\begin{cases}
+\ZZ_2 \quad \text{if $n$ is even}\\
+\ZZ_2^- \quad \text{if $n$ is odd}
+\end{cases}$.
+\item If only $ge_3=\pm b_i$ with $i$ is odd then
+\begin{align*}
+H=
+\begin{cases}
+\ZZ_2^{b_i} \quad \text{if $m$ is even}\\
+\1 \quad \text{if $m$ is odd}
+\end{cases}.
+\end{align*}
+\item If only $ge_3=\pm b_i$ with $i$ is even then
+\begin{align*}
+H=
+\begin{cases}
+\ZZ_2^{b_i^-} \quad \text{if $m$ is even}\\
+\1 \quad \text{if $m$ is odd}
+\end{cases}.
+\end{align*}
+\item If only $gb_i=\pm b_i$ with $i$ is odd then $H=\ZZ_2^{b_i} \ \forall n,m$.
+\item If only $gb_i=\pm b_i$ with $i$ is even then $H=\ZZ_2^{b_i-} \ \forall n,m.$
+\item If $ge_3=\pm e_3$ and $gb_i=\pm b_i \ \forall i$ (we can take the identity rotation) then
+\begin{align*}
+H&=\set{r(e_3,\frac{2k\pi}{d}),r(b_{(2k+1)},\pi);k=0,\dotsc,d-1}\cup-\set{r(e_3,\frac{(2k+1)\pi}{d}),r(b_{2(k+1)},\pi);k=0,\dotsc,d-1}\\
+ &=\DD_{2d}^h.
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{2n}^{h}] \circledcirc [\tetra \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_2^-],[\ZZ_2^{b_i}],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{2n}^h \cap (g\tetra g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\DD_n\cap g \tetra g^{-1})\cup (-(\gamma\DD_n\cap g \tetra g^{-1}))\\
+&=\left(\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi)}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)\bigcup\\
+&-\left(\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi)}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)
+\end{align*}
+If $\forall i\ gvt_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ get_j$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gvt_i=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $get_j=\pm e_3$, then $H=\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if not.
+\item If only $gvt_i=\pm b_i$ (with $i$ even or odd) then $H=\1$.
+\item If only $get_j=\pm b_i$ with $i$ odd then $H=\ZZ_2^{b_i}.$
+\item If only $get_j=\pm b_i$ with $i$ even then $H=\ZZ_2^{b_i-}.$
+\item If $gvt_i=\pm vt_i, \forall i$ and $get_j=\pm et_j, \forall j$ ($g$ identity rotation) then $H=\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if not.
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{2n}^{h}] \circledcirc [\octa \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_4],[\ZZ_2^-],[\ZZ_4^-],[\ZZ_{2}^{b_i}],[\ZZ_2^{b_i-}],[\DD_2],[\DD_4],
+[\DD_4^v],[\DD_2^h],[\DD_4^h]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{2n}^h \cap(g\octa g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\DD_n\cap g \octa g^{-1})\cup (-(\gamma\DD_n\cap g \octa g^{-1}))\\
+&=\left(\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi)}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),r(gec_l,\pi)}\right)\\
+&\bigcup-\left(\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi)}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),r(gec_l,\pi)}\right)
+\end{align*}
+If $\forall i\ gfc_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ gvc_j$ is neither colinear to $e_3$ nor $b_i$ and $\forall l\ gec_l$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gfc_i=\pm e_3$ then $H=\set{\1,\ZZ_4,\ZZ_2^-,\ZZ_4^-}$ see lemma \ref{lem5.7}.
+\item If only $gvc_j=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $gec_l=\pm e_3$, then $H=\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if not.
+\item If only $gfc_i=\pm b_i$ with $i$ odd then $H=\ZZ_2^{b_i}$
+\item If only $gfc_i=\pm b_i$ with $i$ even then $H=\ZZ_2^{b_i-}$
+\item If only $gvc_j=\pm b_i$ (with $i$ even or odd) then $H=\1$.
+\item If only $gec_l=\pm b_i$ with $i$ odd then $H=\1\cup -{r(b_i,\pi)}=\ZZ_2^{b_i}.$
+\item If only $gec_l=\pm b_i$ with $i$ even then $H=\1\cup -{r(b_i,\pi)}=\ZZ_2^{b_i-}.$
+\item If $gfc_i=\pm e_3$ and $gec_l=\pm b_i$ then there exists 3 cases:
+\begin{itemize}
+\item If $4|n$ then $H=\DD_4$ if $i$ is even and $\DD_4^v$ if $i$ is odd.\\
+In fact, when $4|n$, the angle between the $b_i$ in $\DD_n$ is equal to $\frac{\pi}{4p}, p\in\NN^*$ then two of the edge axes of the cube, $ec_{l_1}$ and $ec_{l_2}$ superpose with two of the $b_i$'s. Hence, when we rotate an edge axis to a $b_i$ with $i$ even, $ec_{l_1}$ and $ec_{l_2}$ will be another two of the $b_i$'s and this rotation will lead $e_1$ and $e_2$, which are the face axis of the cube and in the same time two of the $b_i$'s, to bend towards another two of the $b_i$'s with even indices. This will give us four $b_i$'s with even indices in the first intersection, together with $\ZZ_4$ will give $\DD_4$. Same reasoning if the edge axis is rotated to a $b_i$ with odd index, we will end up with four $b_i$'s in the second intersection, together with $\ZZ_4$ give $\DD_4^v$. (see figure below).
+\item if $4 \nmid n$ but $n$ even then $H=\DD_4^h$.
+Same reasoning as the previous case except that in this case the two edge axis and $e_1$, $e_2$ will rotate to $b_i$'s with indices having alternate parity. So we will have two $b_i$ in the first intersection and another two in the second one, together with $\ZZ_4^-$ give $\DD_4^h$.
+\item if $n$ is odd then $H=\ZZ_2^{b_i}$ if $i$ is odd and $\ZZ_2^{b_i-}$ if $i$ is even.
+\end{itemize}
+\item If $gfc_i=\pm b_i$ and $gec_l=\pm e_3$: here $i$ is odd since the only possible rotation satisfying both conditions is the rotation around the axis $e_1=b_1$ so $i=1$. This rotation will turn two edge axes to $e_3$ and $e_2$ and it will turn $e_2$ (which is equal to some $b_i$ if $n$ is even) and $e_3$ to some other two edge axes. Hence we will study two cases:
+\begin{itemize}
+\item If $n$ is even then $e_2=b_j$ for some $j$. \\
+If $e_2=b_j$ for $j$ even then $H=\set{r(e_3,\pi),r(b_1,\pi)}\cup -\set{r(b_j,\pi)}=\DD_2^h$.\\
+If $e_2=b_j$ for $j$ odd then $H=\set{r(e_3,\pi),r(b_1,\pi),r(b_j,\pi)}=\DD_2$.
+\item If $n$ is odd then $H=\1\cup -\set{r(e_3,\pi)}=\ZZ_2^-$
+\end{itemize}
+\end{itemize}
+\end{proof}
+
+\begin{figure}
+		\centering \includegraphics[width=0.5\linewidth]{"Figures piezo/geogebra-export"}
+		\caption{Cube viewed from above with $\DD_8$}
+		\label{fig:graphe21}
+\end{figure}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\DD_{2n}^{h}] \circledcirc
+ [\ico \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2],[\ZZ_3],[\ZZ_5],[\ZZ_2^-],[\ZZ_{2}^{b_i}],[\ZZ_{2}^{b_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\DD_{2n}^h \cap (\ico \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\DD_n\cap g \ico g^{-1})\cup (-(\gamma\DD_n\cap g \ico g^{-1}))\\
+&=\left(\set{r(e_3,\frac{2k\pi}{n}),r(b_{2k+1},\pi)}\cap \set{r(gfd_i,\frac{2k\pi}{5});k=0,\dotsc,4,r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)\\
+&\bigcup-\left(\set{r(e_3,\frac{(2k+1)\pi}{n}),r(b_{2(k+1)},\pi)}\cap \set{r(gfd_i,\frac{2k\pi}{5}),r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)
+\end{align*}
+If $\forall i\ gfd_i$ is neither colinear to $e_3$ nor to $b_i$ and $\forall j\ gvd_j$ is neither colinear to $e_3$ nor $b_i$ and $\forall l\ ged_l$ is neither colinear to $e_3$ nor $b_i$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gfd_i=\pm e_3$ then $H=\ZZ_5$ if $5|n$ and $\1$ if not.
+\item If only $gvd_j=\pm e_3$ then $H=\ZZ_3$ if $3|n$ and $\1$ if not.
+\item If only $ged_l=\pm e_3$, then $H=\ZZ_2$ if $n$ is even and $\ZZ_2^-$ if not.
+\item If only $gfd_i=\pm b_i$ ($\forall i $) then $H=\1$
+\item If only $gvd_j=\pm b_i$ ($\forall i $) then $H=\1$.
+\item If only $ged_l=\pm b_i$ with $i$ odd then $H=\ZZ_2^{b_i}.$
+\item If only $ged_l=\pm b_i$ with $i$ even then $H=\ZZ_2^{b_i-}.$
+\end{itemize}
+\end{proof}
+
+\todoPA{Il faut mettre la figure du cube pour que ça soit plus compréhensible?}
+
+\subsection{Clips with $\octa^-$}
+\par In this part we will calculate the clips operation between $\octa^-$ and each of the subgroups of type II. First, we construct $\octa^-$ from the couple $(\octa,\tetra)$, we have
+\begin{equation*}
+\octa=\set{r(fc_i,\frac{2k\pi}{4});i=1,\dotsc,3, r(vc_j,\frac{2k\pi}{3});j=1,\dotsc,4, r(ec_l,k\pi);l=1\dotsc,6}
+\end{equation*}
+where $vc_i,\ ec_j$ and $fc_l$ are respectively the vertices, edges, and faces axes of the cube.
+\\ And
+\begin{equation*}
+\tetra=\set{r(vt_i,\frac{2k\pi}{3});i=1,\dotsc,4,r(et_j,k\pi);j=1,\dotsc,3}
+\end{equation*}
+where $vt_i$ and $et_j$ are the vertices axes and edges axes of the tetrahedron. The vertices axes of tetrahedron are the same vertices axes of the cube however the edge axes of the tetrahedron are the faces axes of the cube which are the coordinates axes $e_1,e_2$ and $e_3$.
+Hence,
+\begin{equation*}
+\octa^-=\set{r(vc_j,\frac{2k\pi}{3});j=1,\dotsc,4,r(fc_i,k\pi),-r(fc_i,\frac{\pi}{2}),-r(fc_i,\frac{3\pi}{2});i=1,\dotsc,3,
+-r(ec_l,k\pi);l=1\dotsc,6}
+\end{equation*}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\octa^-] \circledcirc [\ZZ_m \oplus \ZZ_2^c]=\set{[\1],[\ZZ_{2}^{e_i}],[\ZZ_3^{vt_i}],[\ZZ_{2}^{ec_l-}],[\ZZ_4^{e_i-}]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\octa^-\cap (g\ZZ_m g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma}, $L=\octa^-\cap \SO(3)=\tetra$ and
+\begin{equation*}
+H=(\tetra\cap g \ZZ_m g^{-1})\cup (-(\gamma\tetra\cap g \ZZ_m g^{-1}))
+\end{equation*}
+where $\gamma=r(fc_1,\frac{\pi}{2})=r(e_1,\frac{\pi}{2})\in \octa\setminus\set{\tetra}$.
+We have
+\begin{align*}
+\gamma \tetra &=r(e_1,\frac{\pi}{2}).\set{r(vt_i,\frac{2k\pi}{3});i=1,\dotsc,4,r(et_j,k\pi);j=1,\dotsc,3}\\
+&=\set{r(ec_l,\pi);l=1,\dotsc,6,r(\underbrace{ft_j}_{e_j},\frac{\pi}{2}),r(\underbrace{ft_j}_{e_j},\frac{3\pi}{2});j=1,\dotsc,3}\\
+\end{align*}
+Hence,
+\begin{align*}
+H=&\left(\set{r(vt_i,\frac{2k\pi}{3});i=1,\dotsc,4,r(\underbrace{et_j}_{e_j},k\pi);j=1,\dotsc,3}\cap \set{r(ge_3,\frac{2k\pi}{m})}\right)\bigcup\\
+  &-\left(\set{r(ec_l,\pi);l=1,\dotsc,6,r(e_j,\frac{\pi}{2}),r(e_j,\frac{3\pi}{2});j=1,\dotsc,3}\cap \set{r(ge_3,\frac{2k\pi}{m})}\right)
+\end{align*}
+If $ge_3$ is not colinear to any of $vt_i, \forall i$, $e_j,\forall j$ and $ec_l,\forall l$ then $H=\1$.\\
+Otherwise, if only $ge_3=\pm vt_i$, then $H=\ZZ_3^{vt_i}$ if $3|m$ and $\1$ if not.\\
+Now if only $ge_3=\pm e_i$ then we have 3 cases:
+\begin{itemize}
+\item If $m$ is even and $4|m$ then $H= \set{e,r(e_i,\pi)}\cup-\set{r(e_i,\frac{\pi}{2}),r(e_i,\frac{3\pi}{2})}=\ZZ_4^{e_i-}$.
+\item If $m$ is even and $4\nmid m$ then $H= \set{e,r(e_i,\pi)}\cup\emptyset=\ZZ_2^{e_i}$.
+\item If $m$ is odd then $H= \1$.
+\end{itemize}
+Finally, if only $ge_3=\pm ec_l$ then $H=\1\cup -\set{r(ec_l,\pi)}=\ZZ_2^{ec_l-}$.
+\end{proof}
+
+\begin{lem}
+We have
+	\begin{equation*}
+	[\octa^-] \circledcirc [\DD_m \oplus\ZZ_2^c]=\set{[\1],[\ZZ_{2}^{ec_l}],[\ZZ_{2}^{ec_l-}],[\ZZ_{2}^{e_i}],[\ZZ_3^{vt_i}],[\ZZ_{4}^{e_i-}],
+[\DD_2],[\DD_2^v],[\DD_4^h]}.
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	Let $H=\octa^-\cap (g\DD_m g^{-1} \oplus \ZZ_2^c)$.
+	By lemma \ref{thelemma}, $L=\tetra$ and $\gamma=r(e_1,\frac{\pi}{2})$. Then
+	\begin{align*}
+	H&=(\tetra \cap g \DD_m g^{-1})\cup (-(\gamma\tetra\cap g \DD_m g^{-1}))\\
+	&=\left(\set{r(vt_i,\frac{2k\pi}{3}),r(e_j,k\pi)}\cap \set{r(ge_3,\frac{2k\pi}{m}),\ r(gb_i,\pi)}\right)\bigcup\\
+	&-\left(\set{r(ec_l,\pi),r(e_j,\frac{\pi}{2}),r(e_j,\frac{3\pi}{2})}\cap \set{r(ge_3,\frac{2k\pi}{m}),r(gb_i,\pi)}\right)
+	\end{align*}
+	If $ge_3$ and $gb_i$ are not colinear to any of $vt_i,\forall i$ , $e_j, \forall j$ and $ec_l, \forall l$ then $H=\1$.\\
+	Otherwise,
+	\begin{itemize}
+		\item if only $ge_3=\pm vt_i$ then $H= \ZZ_3^{vt_i}$ if $3|m$ and $ \1$ if not.
+		\item If only $gb_i=\pm vt_i$, then $H=\1$.
+		\item If only $ge_3=\pm e_i$ then
+		H=$
+		\begin{cases}
+		\ZZ_4^{e_i-} \quad \text{if } m \text{ is even and } 4|m\\
+		\ZZ_2^{e_i} \quad \text{if } m \text{ is even and } 4\nmid m\\
+		\1 \quad \text{if } m \text{ is odd}
+		\end{cases}$
+		\item If only $gb_i=\pm e_i$ then $H=\ZZ_2^{e_i}$.
+		\item If only $ge_3=\pm ec_l$ then $H=\ZZ_2^{ec_l-}$ if $m$ is even and $\1$ if not.
+		\item If only $gb_i=\pm ec_l$ then $H=\ZZ_2^{ec_l-} \ \forall m$.
+		\item If $ge_3=\pm e_3$ and $gb_i=\pm b_i \ \forall i$. (we can take the identity rotation) then we have 3 cases:
+		\begin{itemize}
+	\item If $m$ is even and $4|m$ then there exits two edge axes $ec_{l_1}$ and $ec_{l_2}$ that coincide with the second and fourth secondary axis in $\DD_4$: $b_2$ and $b_4$ since the angle between $e_1$ and an edge axis is $\frac{\pi}{4}$ hence
+	\begin{align*}
+	H=\set{e,r(e_1,\pi),r(e_2,\pi),r(e_3,\pi)}\cup -\set{r(e_3,\frac{\pi}{2}),r(e_3,\frac{3\pi}{2}),r(ec_{l_1},\pi),r(ec_{l_2},\pi)}=\DD_4^h.
+	\end{align*}
+	\item If $m$ is even and $4\nmid m$ then $H=\set{e,r(e_1,\pi),r(e_2,\pi),r(e_3,\pi)}\cup \emptyset=\DD_2$.
+	\item If $m$ is odd then $H=\set{e,r(e_1,\pi)}=\ZZ_2^{e_1}$.
+		\end{itemize}
+		\item If $ge_3=\pm e_j$ and $gb_i=\pm ec_l$ (we take the rotation around $e_3$ axis). When $b_i$ turns around $e_3$ to an edge axis $ec_l$ (which is a secondary axis of $\DD_4$), it will leads the other $b_i$'s to turn to some $b_j$'s hence $gb_i=\pm b_j$ and we have the same result as the previous case.
+        \item If $ge_3=\pm ec_l$ and $gb_i=\pm e_i$ (we take the rotation around $e_1$). When $e_3$ turns to an edge axis $ec_{l_1}$ around $e_1$ it leads $e_2$ to turn to another edge axis $ec_{l_2}$. Hence if $m$ is even $e_2$ will be one of the $b_i$ and we get:
+            \begin{equation*}
+            H=\set{e,r(e_1,\pi)}\cup -\set{r(ec_{l_1},\pi),r(ec_{l_2},\pi)}=\DD_2^v \text{(but around }e_1 \text{ instead of }e_3)??
+            \end{equation*}
+            If not $H=\1$.
+	\end{itemize}
+\end{proof}
+
+
+\begin{lem}
+We have
+\begin{equation*}
+[\octa^-] \circledcirc [\tetra \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2^{e_i}],[\ZZ_2^{ec_l-}],[\ZZ_3^{vt_i}],[\tetra]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\octa^- \cap (g\tetra g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\tetra\cap g \tetra g^{-1})\cup (-(\gamma\tetra\cap g \tetra g^{-1}))\\
+&=\left(\set{r(vt_i,\frac{2k\pi}{3}),r(et_j,k\pi)}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)\bigcup\\
+&-\left(\set{r(ec_l,\pi),r(e_j,\frac{\pi}{2}),r(e_j,\frac{3\pi}{2})}\cap \set{r(gvt_i,\frac{2k\pi}{3}),\ r(get_j,\pi)}\right)
+\end{align*}
+Where the edge axis in the tetrahedron $et_j$ are the coordinates axis $e_1$, $e_2$ and $e_3$.\\
+If $\forall i\ gvt_i$ and $\forall j\ get_j$ are not colinear to any of $vt_i,\forall i$, $e_j,\forall j$ and $ec_l,\forall l$  then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gvt_i=\pm vt_i$ then $H=\ZZ_3^{vt_i}$.
+\item If only $gvt_i=\pm e_j$ then $H=\1$.
+\item If only $gvt_i=\pm ec_l$ then $H=\1$.
+\item If only $ge_j=\pm vt_i$ then $H=\1$.
+\item If only $ge_j=\pm e_j$ then $H=\ZZ_2^{e_j}$.
+\item If only $ge_j=\pm ec_l$ then $H=\ZZ_2^{ec_l-}.$
+\item If $gvt_i=\pm vt_i, \forall i$ and $ge_j=\pm e_j, \forall j$ ($g$ identity rotation) then $H=\tetra$.
+\end{itemize}
+\end{proof}
+
+
+\begin{lem}
+We have
+\begin{equation*}
+[\octa^-] \circledcirc [\octa \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2^{e_i}],[\ZZ_2^{ec_l-}],[\ZZ_3^{vt_i}],[\ZZ_4^{e_i-}],[\DD_4^h],[\octa^-]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\octa^-\cap(g\octa g^{-1} \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\tetra\cap g \octa g^{-1})\cup (-(\gamma\tetra\cap g \octa g^{-1}))\\
+&=\left(\set{r(vt_i,\frac{2k\pi}{3}),r(e_j,k\pi)}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),r(gec_l,\pi)}\right)\\
+&\bigcup-\left(\set{r(ec_l,\pi),r(e_j,\frac{\pi}{2}),r(e_j,\frac{3\pi}{2})}\cap \set{r(gfc_i,\frac{2k\pi}{4}),r(gvc_j,\frac{2k\pi}{3}),r(gec_l,\pi)}\right)
+\end{align*}
+where the vertices axis $vt_i$ of the cube and $vc_j$ of the tetrahedron are the same and the edges axes $et_j$ of the tetrahedron are the faces axes of the cube which are the coordinates axes $e_1$, $e_2$ and $e_3$.\\
+If $\forall i\ gfc_i$, $\forall j \ gvc_j$ and $\forall l,\ gec_l$ are not colinear to any of $vt_i\ \forall i$, $e_j\ \forall j$ and $ec_l\ \forall l$ then $H=\1$.
+Otherwise,
+\begin{itemize}
+\item If only $gfc_i=\pm vt_i$ then $H=\1$
+\item If only $gfc_i=\pm e_j$ then $H=\set{e,r(e_i,\pi)}\cup -\set{r(e_i,\frac{\pi}{2}),r(e_i,\frac{3\pi}{2})}=\ZZ_4^{e_i-}$.
+\item If only $gfc_i=\pm ec_l$ then $H=\1\cup-\set{r(ec_l,\pi)}=\ZZ_2^{ec_l-}$.
+\item If only $gvc_j=\pm vt_i$ then $H=\ZZ_3^{vt_i}$.
+\item If only $gvc_j=\pm e_i$ then $H=\1$.
+\item If only $gvc_j=\pm ec_l$ then $H=\1$.
+\item If only $gec_l=\pm vt_i$, then $H=\1$.
+\item If only $gec_l=\pm e_i$ then $H=\ZZ_2^{e_i}.$
+\item If only $gec_l=\pm ec_l$ then $H=\ZZ_2^{ec_l-}.$
+\item If $gfc_i=\pm fc_i=\pm e_i$ and $gvc_j=\pm vc_j$ and $gec_l=\pm ec_l$ ($g$ is the identity rotation) then
+\begin{equation*}
+\set{e,r(e_i,\pi),r(vt_i,\frac{2k\pi}{3})}\cup-\set{r(e_i,\frac{\pi}{2}),r(e_i,\frac{3\pi}{2}),r(ec_l,\pi)}=\octa^-
+\end{equation*}
+\item If $gfc_i=\pm fc_i=\pm e_i$ and $gec_l=e_j$, $j\neq i$ (we can take the rotation around $e_i$, $e_3$ for example, that turns a $ec_l$ to $e_1$ or $e_2$) then
+    \begin{align*}
+	H=\set{e,r(e_1,\pi),r(e_2,\pi),r(e_3,\pi)}\cup -\set{r(e_i,\frac{\pi}{2}),r(e_i,\frac{3\pi}{2}),r(ec_{l_1},\pi),r(ec_{l_2},\pi)}
+=\DD_4^h (\text{ around } e_i).
+	\end{align*}
+\end{itemize}
+\end{proof}
+
+\begin{lem}
+We have
+\begin{equation*}
+[\octa^-] \circledcirc
+ [\ico \oplus \ZZ_2^c]=\set{[\1],[\ZZ_2^{e_i}],[\ZZ_2^{ec_l-}],[\ZZ_3^{vt_i}],[\tetra]}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Let $H=\octa^- \cap (\ico \oplus \ZZ_2^c)$.
+By lemma \ref{thelemma},
+\begin{align*}
+H&=(\tetra\cap g \ico g^{-1})\cup (-(\gamma\tetra\cap g \ico g^{-1}))\\
+&=\left(\set{r(vt_i,\frac{2k\pi}{3}),r(e_j,k\pi)}\cap \set{r(gfd_i,\frac{2k\pi}{5}),r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)\\
+&\bigcup-\left(\set{r(ec_l,\pi),r(e_j,\frac{\pi}{2}),r(e_j,\frac{3\pi}{2})}\cap \set{r(gfd_i,\frac{2k\pi}{5}),r(gvd_j,\frac{2k\pi}{3}),\ r(ged_l,\pi)}\right)
+\end{align*}
+If $\forall i\ gfd_i$, $\forall j \ gvd_j$ and $\forall l,\ ged_l$ are not colinear to any of $vt_i\ \forall i$, $e_j\ \forall j$ and $ec_l\ \forall l$ then $H=\1$.\\
+Otherwise,
+\begin{itemize}
+\item If only $gfd_i=\pm vt_i$ then $H=\1$
+\item If only $gfd_i=\pm e_j$ then $H=\1$.
+\item If only $gfd_i=\pm ec_l$ $H=\1$.
+\item If only $gvd_j=\pm vt_i$ then $H=\ZZ_3^{vt_i}$.
+\item If only $gvd_j=\pm e_i$ then $H=\1$.
+\item If only $gvd_j=\pm ec_l$ then $H=\1$.
+\item If only $ged_l=\pm vt_i$, then $H=\1$.
+\item If only $ged_l=\pm e_i$ then $H=\ZZ_2^{e_i}.$
+\item If only $ged_l=\pm ec_l$ then $H=\ZZ_2^{ec_l-}.$
+\item If $gfd_i=\pm fd_i=\pm e_i$ and $gvd_j=\pm vd_j$ and $ged_l=\pm ed_l$ ($g$ is the identity rotation) then
+\begin{equation*}
+\set{e,r(vt_i,\frac{2k\pi}{3}),r(e_i,\pi)}=\tetra.
+\end{equation*}
+\end{itemize}
+\end{proof}
+
+%------------------------------------------------------------------
+
+\section{symmetry classes of the piezoelectricity law}
+\par We recall the space of piezoelectricity law $\mathcal{P}$iez introduced in the \autoref{sec:piezoelectricity}:
+\begin{equation*}
+\mathcal{P}\text{iez}=\Ela \oplus \Piez \oplus \Sym
+\end{equation*}
+In this section, we will find the symmetry classes of $\mathcal{P}$iez using lemma \ref{lem:clipslemma}. First we will work on the space
+\begin{equation*}
+\mathcal{P}\text{iela}:=\Ela\oplus \Piez
+\end{equation*}
+
+We already know the symmetry classes of both spaces: $\Ela$ and $\Piez$ (see theorem \ref{thm:J(ela)} and \ref{thm:J(piez)}).
+
+
+%------------------------------------------------------------------
+\newpage
+\appendix
+\section{$\OO(3)$-subgroups}
+\label{sec:appendixA}
+
+There exists three types of $\OO(3)$-subgroups:
+\begin{itemize}
+\item For the subgroups of \textbf{type I}: Every closed subgroup of $\SO(3)$ is conjugate to one of
+\begin{equation*}
+\SO(3),\quad \OO(2),\quad \SO(2), \quad \DD_n, \quad \ZZ_n, \quad \tetra, \quad \octa, \quad \ico, \text{ or} \quad \1
+\end{equation*}
+Where \begin{itemize}
+\item $\OO(2)$ is the subgroup generated by all the rotations around the $z$-axis and the
+order 2 rotation $r : (x, y,z) \rightarrow (x,-y,-z) $ around the $x$-axis.
+\item $\SO(2)$ is the subgroup of all the rotations around the $z$-axis.
+\item $\ZZ_n$ is the unique cyclic subgroup of order $n$ of $\SO(2)$ $(\ZZ_1= {\id})$.
+\item  $\DD_n$ is the dihedral group. It is generated by $\ZZ_n$ and $r :(x, y,z)\rightarrow (x,-y,-z)$
+$(\DD_1 = {\id})$.
+\item $\tetra$ is the tetrahedral group, the (orientation-preserving) symmetry group of the
+tetrahedron. It has order 12.
+\item $\octa$ is the octahedral group, the (orientation-preserving) symmetry group of the
+cube. It has order 24.
+\item $\ico$ is the icosahedral group, the (orientation-preserving) symmetry group of the
+dodecahedron. It has order 60.
+\item $\1$ is the trivial subgroup, containing only the unit element.
+\end{itemize}
+\item For the subgroups of \textbf{type II}: They are subgroups of type I to which we add the group $\ZZ_2^c=\set{\pm \id}$:
+\begin{equation*}
+\ZZ_m\oplus \ZZ_2^c,\quad \DD_m\oplus \ZZ_2^c,\quad \tetra\oplus \ZZ_2^c,\quad \octa\oplus \ZZ_2^c, \quad \ico\oplus \ZZ_2^c
+\end{equation*}
+\item For the subgroups of \textbf{type III}: There are four subgroups of $\OO(3)$ of type III that we construct using a subgroup of type I (see lemma below):
+\begin{equation*}
+\ZZ_{2n}^-,\quad \DD_n^v,\quad \DD_{2n}^h,\quad \octa^-
+\end{equation*}
+Where \begin{itemize}
+\item  $\ZZ_{2n}^-$ $(n \geq 2)$ is the group of order $2n$, generated by $\ZZ_n$ and $-r(e_3,\frac{\pi}{n})$.
+\item $\DD_n^v$ $(n\geq2)$ is the group of order $2n$ generated by $\ZZ_n$ and the reflection through the plane normal to $e_1$ (where $\DD_1^v=\1)$.
+\item $\DD_{2n}^h$ $(n\geq2)$ is the group of order $4n$ generated by $\DD_n$ and $-r(e_3,\frac{\pi}{n})$.
+\item $\octa^-$ is generated by $\SO(2)$ and the reflection through the plane normal to $e_1$.
+\end{itemize}
+\end{itemize}
+
+
+
+
+
+%------------------------------------------------------------------
+\newpage
+\bibliographystyle{abbrv}
+\bibliography{piezorefs}
+%------------------------------------------------------------------
+\end{document} 

@@ -1,0 +1,43 @@
+\begin{thebibliography}{1}
+
+\bibitem{forte1996}
+S.~Forte and M.~Vianello.
+\newblock Symmetry classes for elasticity tensors.
+\newblock {\em Journal of Elasticity}, 43(2):81--108, 1996.
+
+\bibitem{geymonat2002}
+G.~Geymonat and T.~Weller.
+\newblock Symmetry classes of piezoelectric solids.
+\newblock {\em Comptes Rendus Math{\'e}matique}, 335(10):847--852, 2002.
+
+\bibitem{Mostow1957}
+G.~D. Mostow and G.~P. Hochschild.
+\newblock {\em On a conjecture of Montgomery}.
+\newblock Mathematics Division, Air Force Office of Scientific Research, 1957.
+
+\bibitem{olive2019}
+M.~Olive.
+\newblock Effective computation of so (3) and o (3) linear representation
+  symmetry classes.
+\newblock {\em Mathematics and Mechanics of Complex Systems}, 7(3):203--237,
+  2019.
+
+\bibitem{olive2013}
+M.~Olive and N.~Auffray.
+\newblock Symmetry classes for even-order tensors.
+\newblock {\em Mathematics and Mechanics of Complex Systems}, 1(2):177--210,
+  2013.
+
+\bibitem{olive2014}
+M.~Olive and N.~Auffray.
+\newblock Symmetry classes for odd-order tensors.
+\newblock {\em ZAMM-Journal of Applied Mathematics and Mechanics/Zeitschrift
+  f{\"u}r Angewandte Mathematik und Mechanik}, 94(5):421--447, 2014.
+
+\bibitem{weller2004}
+T.~Weller.
+\newblock {\em Etude des sym{\'e}tries et mod{\`e}les de plaques en
+  pi{\'e}zo{\'e}lectricit{\'e} lin{\'e}aris{\'e}e}.
+\newblock PhD thesis, 2004.
+
+\end{thebibliography}

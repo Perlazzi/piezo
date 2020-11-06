@@ -1,0 +1,85 @@
+% Encoding: UTF-8
+
+@Book{mostow1957,
+  author    = {Mostow, George D and Hochschild, Gerhard Paul},
+  publisher = {Mathematics Division, Air Force Office of Scientific Research},
+  title     = {On a conjecture of Montgomery},
+  year      = {1957},
+}
+
+@Article{forte1996,
+  author    = {Forte, Sandra and Vianello, Maurizio},
+  journal   = {Journal of Elasticity},
+  title     = {Symmetry classes for elasticity tensors},
+  year      = {1996},
+  number    = {2},
+  pages     = {81--108},
+  volume    = {43},
+  publisher = {Springer},
+}
+
+@PhdThesis{weller2004,
+  author = {Weller, Thibaut},
+  title  = {Etude des sym{\'e}tries et mod{\`e}les de plaques en pi{\'e}zo{\'e}lectricit{\'e} lin{\'e}aris{\'e}e},
+  year   = {2004},
+}
+
+@Article{olive2019,
+  author    = {Olive, Marc},
+  journal   = {Mathematics and Mechanics of Complex Systems},
+  title     = {Effective computation of SO (3) and O (3) linear representation symmetry classes},
+  year      = {2019},
+  number    = {3},
+  pages     = {203--237},
+  volume    = {7},
+  publisher = {Mathematical Sciences Publishers},
+}
+
+@Article{olive2013,
+  author    = {Olive, Marc and Auffray, Nicolas},
+  journal   = {Mathematics and Mechanics of Complex Systems},
+  title     = {Symmetry classes for even-order tensors},
+  year      = {2013},
+  number    = {2},
+  pages     = {177--210},
+  volume    = {1},
+  publisher = {Mathematical Sciences Publishers},
+}
+
+@Article{OKDD2018,
+  author    = {Olive, Marc and Kolev, Boris and Desmorat, Boris and Desmorat, Rodrigue},
+  journal   = {Journal of Elasticity},
+  title     = {Harmonic factorization and reconstruction of the elasticity tensor},
+  year      = {2018},
+  number    = {1},
+  pages     = {67--101},
+  volume    = {132},
+  publisher = {Springer},
+}
+
+@Article{jordan,
+  author    = {Jerphagnon, Jean and Chemla, Daniel and Bonneville, R},
+  journal   = {Advances in Physics},
+  title     = {The description of the physical properties of condensed matter using irreducible tensors},
+  year      = {1978},
+  number    = {4},
+  pages     = {609--650},
+  volume    = {27},
+  publisher = {Taylor \& Francis},
+}
+
+@Article{geymonat2002,
+  author    = {Geymonat, G and Weller, T},
+  journal   = {Comptes Rendus Math{\'e}matique},
+  title     = {Symmetry classes of piezoelectric solids},
+  year      = {2002},
+  number    = {10},
+  pages     = {847--852},
+  volume    = {335},
+  publisher = {EDITIONS SCIENTIFIQUES MEDICALES ELSEVIER 23 RUE LINOIS, 75724 PARIS CEDEX~…},
+}
+
+@Article{,
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
